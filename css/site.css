@@ -293,7 +293,15 @@ button{ font:inherit; color:inherit; cursor:pointer; background:none; border:non
 /* ============================================================
    CTA
    ============================================================ */
-.cta{ text-align:center; }
+.cta{ text-align:center; position:relative; overflow:hidden; }
+.cta::before{ content:""; position:absolute; inset:0; z-index:0;
+  background:url(../assets/img/higgsfield/cta-bg.jpg) center right / cover no-repeat;
+  opacity:0.55; }
+.cta::after{ content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:
+    radial-gradient(ellipse 64% 58% at 50% 48%, var(--ink) 32%, oklch(0.17 0.012 75 / 0.4) 70%, transparent 100%),
+    linear-gradient(180deg, var(--ink), transparent 18%, transparent 82%, var(--ink)); }
+.cta > .wrap{ position:relative; z-index:2; }
 .cta .h-display{ font-size:clamp(2.6rem,7vw,6rem); }
 .cta .h-display .gold{ color:var(--gold); }
 .cta .lead{ margin:1.5rem auto 0; text-align:center; }
