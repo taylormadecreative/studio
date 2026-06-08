@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Client Portal · Taylormade Creative</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="portal.css" />
+</head>
+<body>
+
+<!-- ================= LOGIN ================= -->
+<section class="auth" id="authView">
+  <aside class="auth-aside">
+    <div class="auth-brand"><span class="mk">T</span> Taylormade Creative</div>
+    <h1>Your brand, <em>reviewed</em> before it goes live.</h1>
+    <p>Log in to see this week's content, approve posts, order prints, and send me your footage.</p>
+  </aside>
+  <main class="auth-main">
+    <div class="auth-card">
+      <h2>Client login</h2>
+      <p class="sub">Welcome back. Sign in to your portal.</p>
+      <form id="loginForm">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" autocomplete="email" required />
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" autocomplete="current-password" required />
+        </div>
+        <button class="btn-primary" type="submit" id="loginBtn">Sign in</button>
+        <div class="auth-err" id="authErr"></div>
+      </form>
+      <p class="auth-help">Trouble signing in? Text Nelson at (817) 707-1291.</p>
+    </div>
+  </main>
+</section>
+
+<!-- ================= APP ================= -->
+<section class="app hidden" id="appView">
+  <aside class="side" id="side">
+    <div class="crest"><span class="dot" id="crestDot">T</span> <span id="crestName">Studio</span></div>
+    <nav id="nav">
+      <button data-tab="content" class="active">▦ Content</button>
+      <button data-tab="print">🖨 Print orders</button>
+      <button data-tab="uploads">⤴ Send footage</button>
+    </nav>
+    <div class="quote" id="brandQuote"></div>
+    <div class="side-foot">
+      Taylormade Creative · DFW<br>
+      <button id="logoutBtn">Log out</button>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div style="display:flex;align-items:center;gap:0.8rem">
+        <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+        <div>
+          <h1 id="greeting">Hi</h1>
+          <div class="who" id="subhead"></div>
+        </div>
+      </div>
+      <div class="admin-switch hidden" id="adminSwitch">
+        <span class="admin-badge">Admin</span>
+        <select id="clientSelect"></select>
+      </div>
+    </div>
+
+    <div class="content-pad">
+      <div class="stats" id="stats"></div>
+
+      <div class="tabs" id="tabs">
+        <button data-tab="content" class="active">Content</button>
+        <button data-tab="print">Print orders</button>
+        <button data-tab="uploads">Send footage</button>
+      </div>
+
+      <div id="tab-content" class="tabpane"></div>
+      <div id="tab-print" class="tabpane hidden"></div>
+      <div id="tab-uploads" class="tabpane hidden"></div>
+    </div>
+  </div>
+</section>
+
+<div class="toast" id="toast"></div>
+
+<script src="config.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
