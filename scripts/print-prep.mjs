@@ -22,8 +22,13 @@ const { data: pending, error: pErr } = await sb
   .order("created_at", { ascending: true });
 if (pErr) { console.error("Query failed:", pErr.message); process.exit(1); }
 
+await mkdir(STAGING, { recursive: true });
+
 const entries = [];
-for (const o of pending) {
+for (const o of (pending || [])) {
+  if (o.clients == null && o.client_id != null) {
+    console.warn(`⚠ Order #${o.order_no}: client ${o.client_id} did not resolve (check FK / RLS) — labeling "Unknown client".`);
+  }
   const clientName = o.clients?.name || "Unknown client";
   const slug = clientSlug(clientName);
   const dir = join(STAGING, `${o.order_no}_${slug}`);
@@ -36,7 +41,7 @@ for (const o of pending) {
     await rm(dir, { recursive: true, force: true });
     await mkdir(dir, { recursive: true });
     for (const path of (o.art_paths || [])) {
-      const base = safeFileName(path.split("/").pop());
+      const base = safeFileName(path.split("/").pop() || "file");
       try {
         const { data: blob, error: dErr } = await sb.storage.from(ART_BUCKET).download(path);
         if (dErr) throw dErr;
@@ -61,7 +66,6 @@ const { data: all, error: aErr } = await sb
   .from("print_orders").select("*, clients(name)").order("order_no", { ascending: true });
 if (aErr) { console.error("Snapshot query failed:", aErr.message); process.exit(1); }
 const flat = (all || []).map((o) => ({ ...o, client_name: o.clients?.name || "" }));
-await mkdir(STAGING, { recursive: true });
 await writeFile(join(STAGING, "print-orders-log.csv"), ordersToCsv(flat));
 
 // 3. manifest
