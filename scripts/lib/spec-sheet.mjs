@@ -3,11 +3,17 @@ function escapeHtml(s) {
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 }
 
+// Only allow http(s) links; anything else (javascript:, data:, etc.) collapses to "#".
+function safeUrl(u) {
+  const s = (u == null ? "" : String(u)).trim();
+  return /^https?:\/\//i.test(s) ? s : "#";
+}
+
 export function renderSpecSheet(order) {
   const s = order.specs || {};
   const files = order.art || [];
   const artItems = files.length
-    ? files.map((a) => `<li><a href="${escapeHtml(a.signed_url || "#")}">${escapeHtml(a.name)}</a></li>`).join("")
+    ? files.map((a) => `<li><a href="${escapeHtml(safeUrl(a.signed_url))}">${escapeHtml(a.name)}</a></li>`).join("")
     : "<li>No files attached</li>";
   const row = (label, val) => `<tr><th>${label}</th><td>${escapeHtml(val ?? "") || "&mdash;"}</td></tr>`;
   const signed = !!order.client_signed_off;

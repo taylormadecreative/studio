@@ -37,3 +37,9 @@ test("escapes html in client notes", () => {
 test("links each art file by signed url", () => {
   assert.match(renderSpecSheet(base), /href="https:\/\/example\.com\/card\.pdf"/);
 });
+
+test("blocks non-http(s) art urls (no javascript: scheme)", () => {
+  const html = renderSpecSheet({ ...base, art: [{ name: "x.pdf", signed_url: "javascript:alert(1)" }] });
+  assert.doesNotMatch(html, /javascript:/i);
+  assert.match(html, /href="#"/);
+});
