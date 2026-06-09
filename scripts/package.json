@@ -1,0 +1,14 @@
+{
+  "name": "tc-print-pipeline",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node --test test/",
+    "prep": "node --env-file=.env print-prep.mjs",
+    "stamp": "node --env-file=.env print-stamp.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0"
+  }
+}
