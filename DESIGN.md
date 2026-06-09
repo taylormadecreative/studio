@@ -1,33 +1,33 @@
 # DESIGN.md — Taylormade Creative
 
 ## Register & strategy
-Brand register. Color strategy: **Drenched dark** — a near-black paper surface dominates, **gold** is the single committed accent, warm off-white carries type. Creator-editorial zine energy (think editorial fashion zine, not SaaS): real photos of Nelson as hero, big confident type, generous negative space, occasional mixed-media texture. Not a deck. Not a template.
+Brand register. Color strategy: **Bold Pop, full palette** — a warm off-white surface carries the page, and three saturated pops (electric blue, hot pink, sunny yellow) each play a deliberate role. Colorful and fun, but disciplined and spacious so it reads premium, not chaotic. Color-blocked full-bleed sections for the two services (blue = social, pink = print), near-black for the portal and closing CTA. Big confident display type, generous negative space, playful rotated cards/chips and soft blobs. Not a deck, not a template, not the old black/gold version.
 
-## Color (OKLCH, never #000/#fff)
-- `--ink`     oklch(0.17 0.012 75)   /* warm near-black, page surface */
-- `--ink-2`   oklch(0.22 0.012 75)   /* raised panels */
-- `--paper`   oklch(0.95 0.010 85)   /* warm off-white, primary type */
-- `--paper-dim` oklch(0.74 0.012 85) /* secondary type */
-- `--gold`    oklch(0.80 0.125 80)   /* the accent — real metallic gold, not yellow */
-- `--gold-deep` oklch(0.68 0.12 70)  /* gold hover/press */
-- `--line`    oklch(0.30 0.012 75)   /* hairlines */
-Gold appears on ≤ ~20% of any view (it's the committed accent, not a flood). Tint every neutral toward hue 75–85.
+## Color (hex are the approved brand swatches; never #000/#fff)
+- `--paper`   #FAF7F2   /* warm off-white, page surface */
+- `--paper-2` #F1EBDF   /* raised warm panels */
+- `--ink`     #121318   /* near-black: text, portal, CTA */
+- `--ink-soft`#4A4C56   /* secondary text */
+- `--blue`    #2E5BFF (deep #1E42D6)   /* social block, primary CTA, links */
+- `--pink`    #FF4FA3 (deep #E23A8B)   /* print block, accents */
+- `--yellow`  #FFD23F (deep #EFBC1C)   /* highlights, CTA-on-dark, energy */
+Each color owns a role; don't flood. On the blue block use white text; on the pink block use ink text (contrast). Accent words use a soft same-color underline highlight (`.hl`).
 
 ## Type
-- **Display:** Bricolage Grotesque (700/800) — modern editorial grotesque with character. Hero + section headers.
-- **Serif accent:** Fraunces (italic, optical) — for emphasis words and pull quotes only. The zine "voice."
-- **UI / body:** Inter (variable). Body capped 65–72ch.
-- Scale ratio ≥ 1.25. Hero display is huge (clamp to ~clamp(3rem, 9vw, 8rem)). Weight contrast does the hierarchy work.
+- **Display:** Bricolage Grotesque (700/800). Hero + section headers, tight tracking.
+- **Body / UI:** Space Grotesk (400–700). Body capped ~54ch.
+- **Serif accent:** Fraunces (italic) for the occasional emphasis word only.
+- Scale ratio ≥ 1.25. Hero display clamp(2.7rem, 7.2vw, 6.2rem). Weight + color do the hierarchy work.
 
 ## Motion (Emil + taste)
-- Transitions on transform/opacity only. Ease-out-expo / quint. No bounce, no elastic. < 320ms.
-- Entrances: subtle rise + fade on scroll (IntersectionObserver), staggered. Always `prefers-reduced-motion` guarded.
-- Micro: scale-on-press 0.97 for buttons, gold underline wipes on links. Hardware-accelerated (`transform`, `will-change` sparingly).
+- Transitions on transform/opacity only. Custom ease-out `cubic-bezier(.23,1,.32,1)`. No bounce, no elastic. < 320ms for UI.
+- Entrances: subtle rise + fade on scroll (IntersectionObserver), staggered, `prefers-reduced-motion` guarded.
+- Micro: scale-on-press 0.97 for buttons, underline wipes on nav links, kinetic marquee, soft pulse on the scarcity dot. Hardware-accelerated.
 
 ## Layout
-- Full-bleed editorial sections; vary spacing for rhythm (no uniform padding). Avoid card grids as a reflex.
-- Real photos graded into the black/gold register via duotone/contrast where needed for cohesion.
-- Mobile-first. Sticky slim nav. One-column stacks under 760px.
+- Full-bleed color-blocked sections; asymmetric service rows (zig-zag, copy + floating-image/chip art). Vary spacing for rhythm. No reflex card grids; work gallery is a masonry (CSS columns).
+- Real client photos only, shown as rotated bordered cards on the social block and in the work gallery (lightbox on click).
+- Mobile-first. Sticky slim nav with animated hamburger sheet. One-column stacks under 860px; hero side-cards hidden on mobile.
 
 ## Banned (in addition to impeccable's)
-Side-stripe borders, gradient text, decorative glass, hero-metric template, identical card grids, modals. Decorative circles (a specific client hate). Stock-photo energy.
+Photos of Nelson, any About/founder section, any service beyond social + print. Black/gold (the old register). Side-stripe borders, gradient text, decorative glass, hero-metric template, identical card grids, modals, em dashes, pricing.

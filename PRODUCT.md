@@ -3,21 +3,33 @@
 **Register:** brand. This is a marketing landing page Nelson sends to prospective clients. The design *is* the product.
 
 ## What it is
-Taylormade Creative is a one-person creative studio in Dallas–Fort Worth run by Nelson Taylor. Services: **social media management** (the headline service, with a real client login + content-review portal), **video production** (Sony FX6 + A7RV), **AI creative direction**, and **design / web**. The page's job: make a prospect think "this person operates at a higher level than anyone else I've talked to" and reach out.
+Taylormade Creative is a **remote studio that works with clients anywhere**, focused on exactly **two services, done exceptionally well**:
+1. **Social media management** (the flagship, with a real client login + content-review portal)
+2. **Print & production** (business cards, flyers, banners, signage, stickers, booklets, backed by an in-portal upload → proof → produced flow)
+
+Nothing else is offered or shown. No video service, no AI service, no design/web service, no founder bio. The page's job: make a prospect with money to spend think "this studio operates at a higher level than anyone else I've talked to" and reach out.
 
 ## Who it's for
-DFW (and remote) small businesses, realtors, founders, and independent artists who need their brand to look expensive and actually sell. They are scrolling on a phone. They are comparing Nelson to cheaper freelancers and faceless agencies. The page wins by proof and taste, not by claims.
+The ideal client is a brand or operator **with budget who wants to look premium** and refuses to look average: small businesses, realtors, founders, beauty/DTC, and home-services brands, anywhere (the studio is fully remote). They are scrolling on a phone, comparing Taylormade to faceless agencies and cheap freelancers. The page wins by proof, taste, and exclusivity, not by claims or discounts.
 
 ## Voice
-First person, designer-to-designer, DFW. "I run brands." "My studio." "Let me put you on." Confident, partnership-not-vendor, warm, never corporate, never salesy, no emoji walls. Soft closes only (partnership leads to money; never chase money). 
+First person, warm, confident, partnership-not-vendor. "I run social and print for brands that refuse to look average." Remote, works with clients anywhere. Never corporate, never salesy, no emoji walls. Soft closes only (partnership leads to money; never chase money). **This is not a personal-brand / about-Nelson page** — the studio and the work are the subject, not the founder.
 
 ## Hard rules (do not violate)
-- **Real credentials only.** Lead with: 14 years design + BFA (Art Institute of Dallas), one **shipped iOS app** (Run It UP! Dallas), **AI creative direction for AiCON 2026** (created the AI stage host). Do NOT claim "built platforms for universities" or invent client lists.
-- **No pricing anywhere on the page.** Rates live in DMs / HoneyBook. CTA = start a conversation.
-- **Do not show AI-avatar IP** (ADA / MARA / REMI / NALA). That is private sales IP, not public portfolio.
-- **Never name the supply chain** (no HeyGen / Higgsfield / ASI / suppliers as "how it's made").
+- **Two services only:** social media management + print. Do not add video, AI, design/web, or app services back to the page.
+- **No Dallas / Fort Worth / DFW / location framing.** The studio is remote and works with brands anywhere. Do not geo-anchor the page.
+- **No photos of Nelson and no About/founder section.** The page is about the work and the two services, not the person.
+- **No pricing anywhere.** Rates live in DMs / HoneyBook. CTA = start a conversation.
+- **Never name the supply chain** (no print supplier, no HeyGen / Higgsfield / ASI named as "how it's made").
+- **Real work only.** Genuine clients shown: World of Baths (home-services SMM), Arena Group (realtor SMM), Panty Cakes (beauty/DTC SMM). Arena Hudson testimonial quotes are real.
 - **Banned words:** cheap, discount, budget-friendly, "it's easy," quick turnaround. **No em dashes.**
-- Real client work shown is genuine: World of Baths (home-services SMM), Arena Group (realtor SMM), Panty Cakes (beauty/DTC SMM), Run It UP! (shipped app).
+
+## Conversion psychology (build for the money client)
+- Outcome-framed headlines (Jobs-to-be-Done): social that sells, print that gets noticed.
+- Social proof + authority via real client work and the trust strip.
+- Genuine scarcity / exclusivity ("a limited number of brands at a time") to trigger mimetic desire and premium positioning.
+- One clear primary CTA throughout (Hick's Law): "Start a project."
+- Strong closing peak (the CTA block).
 
 ## Anti-references (do not look like these)
-Generic SaaS landing pages. Fiverr/Upwork freelancer pages. Templated agency sites (Squarespace "Pacific" look). Navy-and-gold finance cliché. Anything that reads "AI made that."
+Generic SaaS landing pages. Fiverr/Upwork freelancer pages. Templated agency sites (Squarespace "Pacific" look). Navy-and-gold finance cliché. The old black/gold version of this very site. Anything that reads "AI made that."
