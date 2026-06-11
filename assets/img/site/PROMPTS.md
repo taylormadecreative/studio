@@ -46,3 +46,17 @@ Photoreal, premium, consistent with the print-catalog set: bold-pop palette (ele
 - `cta-texture.png`
 - `social-studio.png`
 - `print-scene.png`
+- `vendor-booth.png`
+
+## IMAGE vendor — Happy vendor at outdoor event
+
+```json
+{
+  "subject": "a joyful Black woman small-business owner standing proudly at her outdoor market booth, laughing, arms slightly open welcoming customers; her booth is FULLY matching-branded in one cohesive identity: a canopy tent with electric-blue valance, a hot-pink fitted tablecloth with abstract yellow shapes, a tall retractable pop-up banner beside the table, a small A-frame sign in front, flyers and business cards fanned on the table — every printed piece carries the same abstract bold-pop pattern (electric blue #2E5BFF, hot pink #FF4FA3, sunny yellow #FFD23F), no readable text or logos anywhere",
+  "setting": "sunny outdoor community market or festival, soft-focus crowd and string lights in the background, golden daylight",
+  "lighting": "warm natural sunlight, gentle lens depth of field, vibrant but realistic color",
+  "style": "premium editorial lifestyle photography, candid joy, ultra sharp on subject and booth",
+  "composition": "vendor slightly off-center, full booth visible showing tent + tablecloth + banner + signage together as one matching brand system",
+  "meta": { "aspect_ratio": "4:5" }
+}
+```
