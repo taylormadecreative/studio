@@ -225,9 +225,22 @@ a{color:inherit;text-decoration:none}
    SECTIONS
    ============================================================ */
 .section{padding:clamp(4.5rem,9vw,8rem) 0}
-.intro{padding-block:clamp(4rem,8vw,7rem)}
+.intro{padding-block:clamp(4rem,8vw,7rem) clamp(2.5rem,5vw,4rem)}
+.intro-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.intro-art{margin:0;border-radius:16px;overflow:hidden;border:6px solid #fff;box-shadow:0 30px 60px -30px rgba(18,19,24,.45);transform:rotate(3deg);max-width:340px;justify-self:end}
+.intro-art img{display:block;width:100%}
 .big-statement{font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,3.4vw,2.5rem);line-height:1.18;letter-spacing:-.02em;max-width:24ch;margin:0}
 .big-statement .serif-em{color:var(--blue)}
+
+/* ---------- what we do ---------- */
+.whatwedo .wwd-row{display:flex;flex-wrap:wrap;gap:.9rem;margin-bottom:.9rem}
+.whatwedo .wwd-row.offset{padding-left:clamp(0rem,6vw,5rem);margin-bottom:0}
+.wwd{display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:.65rem;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:.9rem 1.15rem;box-shadow:0 14px 30px -22px rgba(18,19,24,.35);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.wwd:hover{transform:translateY(-3px);box-shadow:0 22px 40px -24px rgba(18,19,24,.45)}
+.wwd i{grid-row:1/3;width:13px;height:13px;border-radius:50%}
+.wwd b{font-family:var(--display);font-weight:700;font-size:1rem;line-height:1.1}
+.wwd span{font-size:.84rem;color:var(--ink-soft)}
+.d-blue{background:var(--blue)}.d-pink{background:var(--pink)}.d-yellow{background:var(--yellow)}
 .sec-head{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:end;margin-bottom:3rem}
 .sec-head .eyebrow{margin-bottom:1rem}
 
@@ -259,15 +272,13 @@ a{color:inherit;text-decoration:none}
 .fi-a{top:0;left:2%;transform:rotate(-5deg);z-index:3}
 .fi-b{top:14%;right:0;transform:rotate(4deg);z-index:2;width:50%}
 .fi-c{bottom:0;left:18%;transform:rotate(2deg);z-index:1;width:50%}
-.print-stack{position:relative;height:100%;min-height:360px}
-.chip{position:absolute;background:#fff;color:var(--ink);font-family:var(--display);font-weight:700;font-size:1.05rem;padding:.7rem 1.2rem;border-radius:999px;box-shadow:0 18px 40px -22px rgba(0,0,0,.5);display:inline-flex;align-items:center;gap:.5rem}
+.print-stack{position:relative;min-height:360px;display:flex;align-items:center;justify-content:center}
+.ps-img{width:78%;max-width:420px;border-radius:16px;border:6px solid #fff;box-shadow:0 34px 64px -32px rgba(0,0,0,.55);transform:rotate(-2deg)}
+.chip{position:absolute;background:#fff;color:var(--ink);font-family:var(--display);font-weight:700;font-size:1.02rem;padding:.65rem 1.15rem;border-radius:999px;box-shadow:0 18px 40px -22px rgba(0,0,0,.5);display:inline-flex;align-items:center;gap:.5rem;z-index:2}
 .chip::before{content:"";width:10px;height:10px;border-radius:50%}
-.chip-1{top:4%;left:6%;transform:rotate(-6deg)}.chip-1::before{background:var(--blue)}
-.chip-2{top:20%;right:4%;transform:rotate(5deg)}.chip-2::before{background:var(--yellow)}
-.chip-3{top:40%;left:0;transform:rotate(3deg)}.chip-3::before{background:var(--pink)}
-.chip-4{top:56%;right:10%;transform:rotate(-4deg)}.chip-4::before{background:var(--blue)}
-.chip-5{bottom:10%;left:14%;transform:rotate(6deg)}.chip-5::before{background:var(--yellow)}
-.chip-6{bottom:0;right:2%;transform:rotate(-3deg)}.chip-6::before{background:var(--pink)}
+.chip-1{top:6%;left:2%;transform:rotate(-7deg)}.chip-1::before{background:var(--blue)}
+.chip-2{top:44%;right:0;transform:rotate(5deg)}.chip-2::before{background:var(--yellow)}
+.chip-3{bottom:8%;left:10%;transform:rotate(4deg)}.chip-3::before{background:var(--blue)}
 
 /* ============================================================
    WORK
@@ -401,10 +412,22 @@ a{color:inherit;text-decoration:none}
 .quote.feature .who span{color:rgba(255,255,255,.75)}
 
 /* ============================================================
+   BOOK (embedded scheduler)
+   ============================================================ */
+.book{padding-top:0}
+.book .sec-head.center{grid-template-columns:1fr;text-align:center;justify-items:center;margin-bottom:2.2rem}
+.book .sec-head.center .lead{margin-inline:auto}
+.book-frame{border-radius:24px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 40px 80px -44px rgba(18,19,24,.5);height:min(80vh,780px)}
+.book-frame iframe{display:block;width:100%;height:100%;border:0}
+.book-alt{text-align:center;margin-top:1.1rem;font-size:.92rem;color:var(--ink-soft)}
+.book-alt a{font-weight:600;color:var(--blue)}
+.book-alt a:hover{text-decoration:underline}
+
+/* ============================================================
    CTA
    ============================================================ */
-.cta{position:relative;background:var(--ink);color:var(--paper);text-align:center;overflow:hidden;margin:0 clamp(.6rem,2vw,1.4rem) clamp(.6rem,2vw,1.4rem);border-radius:32px}
-.blob-cta-y{position:absolute;border-radius:50%;z-index:0;width:46vw;height:46vw;max-width:560px;max-height:560px;background:radial-gradient(circle,rgba(255,210,63,.4),transparent 68%);top:-22%;left:50%;transform:translateX(-50%);filter:blur(10px)}
+.cta{position:relative;background:var(--ink) url("../assets/img/site/cta-texture.png") center/cover no-repeat;color:var(--paper);text-align:center;overflow:hidden;margin:0 clamp(.6rem,2vw,1.4rem) clamp(.6rem,2vw,1.4rem);border-radius:32px}
+.cta::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(18,19,24,.18) 30%,rgba(18,19,24,.55))}
 .cta .wrap{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
 .cta-h{margin:1.2rem 0 1.4rem}
 .cta .lead{color:rgba(255,255,255,.8);margin-inline:auto;text-align:center}
@@ -465,6 +488,12 @@ a{color:inherit;text-decoration:none}
   .quotes{grid-template-columns:1fr}
   .cd-inner{grid-template-columns:1fr;gap:3rem}
   .cd-visual{min-height:300px;max-width:360px}
+  .intro-grid{grid-template-columns:1fr}
+  .intro-art{justify-self:center;max-width:300px}
+  .whatwedo .wwd-row.offset{padding-left:0}
+  .wwd{flex:1 1 100%}
+  .book-frame{height:min(86vh,820px);border-radius:18px}
+  .print-stack{min-height:300px}
 }
 @media (max-width:560px){
   body{font-size:16px}

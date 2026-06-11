@@ -15,12 +15,22 @@ Trigger phrase: **"run the print pipeline."**
 - The `prepped_at` / `drive_folder_url` / `drive_folder_id` columns must exist on
   `print_orders` (see `supabase/migrations/2026-06-08-print-prep-columns.sql`).
 
+## Daily automation
+A scheduled check runs `npm run check` every morning and pushes Nelson a notification
+when orders need prepping or are signed off and ready to place. Sign-off is the trigger:
+once a client signs off in the portal (status `approved_to_print`), the order shows as
+`ready_to_place` and the full runbook below should be run.
+
 ## Steps
 
 1. **Stage locally**
    `cd ~/taylormade-studio/scripts && npm run prep`
-   Read the printed summary. If an order shows `⚠`, surface it to Nelson and do NOT
-   continue with that order (it stays un-prepped and re-runnable).
+   Read the printed summary. Orders marked `★ SIGNED OFF` are cleared for the supplier.
+   If an order shows `⚠`, surface it to Nelson and do NOT continue with that order
+   (it stays un-prepped and re-runnable). Each staged order also gets an
+   `INTERNAL-order-sheet.html` with the exact supplier configurator selections,
+   wholesale anchors, and a cleared-to-place gate. **NEVER upload the INTERNAL sheet
+   to any client-visible location** — it stays local / Nelson-only.
 
 2. **Read the manifest**
    Read `scripts/staging/manifest.json`. For each order with `errors: []`:
@@ -48,6 +58,8 @@ Trigger phrase: **"run the print pipeline."**
 6. **Stamp the row** (per order, after its upload succeeds)
    `cd ~/taylormade-studio/scripts && node --env-file=.env print-stamp.mjs <order_id> "<folder_url>" "<folder_id>"`
 
-7. **Report to Nelson**
-   List each order, its Drive folder link, file count, and sign-off state. Remind him which
-   orders are cleared to place vs awaiting client sign-off.
+7. **Hand Nelson the placement package**
+   For each SIGNED-OFF order: give him the Drive folder link AND the local
+   `INTERNAL-order-sheet.html` path — it contains the supplier configurator link with
+   every option pre-decided, so placing takes about a minute. List the rest (awaiting
+   sign-off) separately. Nelson places the supplier order MANUALLY; nothing auto-charges.

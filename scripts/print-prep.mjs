@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { adminClient } from "./lib/supabase-admin.mjs";
 import { clientSlug, safeFileName, ordersToCsv, buildManifest } from "./lib/format.mjs";
 import { renderSpecSheet } from "./lib/spec-sheet.mjs";
+import { renderOrderSheet } from "./lib/order-sheet.mjs";
 
 const __dir = dirname(fileURLToPath(import.meta.url));
 const STAGING = join(__dir, "staging");
@@ -18,7 +19,7 @@ const { data: pending, error: pErr } = await sb
   .from("print_orders")
   .select("*, clients(name)")
   .is("prepped_at", null)
-  .in("status", ["submitted", "in_review"])
+  .in("status", ["submitted", "in_review", "client_signoff", "approved_to_print"])
   .order("created_at", { ascending: true });
 if (pErr) { console.error("Query failed:", pErr.message); process.exit(1); }
 
@@ -35,6 +36,7 @@ for (const o of (pending || [])) {
   const entry = {
     id: o.id, order_no: o.order_no, client_name: clientName, client_id: o.client_id,
     product: o.product, status: o.status, client_signed_off: !!o.client_signed_off,
+    awaiting_placement: o.status === "approved_to_print" && !!o.client_signed_off,
     staging_dir: dir, art: [], errors: [],
   };
   try {
@@ -55,6 +57,9 @@ for (const o of (pending || [])) {
     }
     await writeFile(join(dir, "spec-sheet.html"), renderSpecSheet({ ...o, client_name: clientName, art: entry.art }));
     entry.spec_sheet = join(dir, "spec-sheet.html");
+    // Internal-only 4over sheet: stays in staging for Nelson; the runbook NEVER uploads it anywhere client-visible.
+    await writeFile(join(dir, "INTERNAL-order-sheet.html"), renderOrderSheet({ ...o, client_name: clientName, art: entry.art }));
+    entry.order_sheet = join(dir, "INTERNAL-order-sheet.html");
   } catch (e) {
     entry.errors.push(`order: ${e.message || e}`);
   }
@@ -75,7 +80,7 @@ await writeFile(join(STAGING, "manifest.json"), JSON.stringify(buildManifest(ent
 const ok = entries.filter((e) => e.errors.length === 0).length;
 console.log(`Prepped ${ok}/${entries.length} order(s). Staging: ${STAGING}`);
 for (const e of entries) {
-  console.log(` #${e.order_no} ${e.client_name} — ${e.art.length} file(s)${e.errors.length ? " ⚠ " + e.errors.join("; ") : ""}`);
+  console.log(` #${e.order_no} ${e.client_name} — ${e.art.length} file(s)${e.awaiting_placement ? " ★ SIGNED OFF — ready to place at supplier" : ""}${e.errors.length ? " ⚠ " + e.errors.join("; ") : ""}`);
 }
 console.log(`Log snapshot: ${join(STAGING, "print-orders-log.csv")}`);
 console.log(`Manifest:     ${join(STAGING, "manifest.json")}`);
