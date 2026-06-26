@@ -113,7 +113,7 @@
   /* ---- sticky mobile CTA: appears after the hero, hides near the booking form ---- */
   var sticky = document.getElementById("stickyCta");
   var hero = document.querySelector(".hero");
-  var book = document.getElementById("book");
+  var book = document.getElementById("book") || document.getElementById("quote");
   if (sticky && hero) {
     var updateSticky = function () {
       var pastHero = window.scrollY > hero.offsetHeight - 80;
