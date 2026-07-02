@@ -1,33 +1,38 @@
-# DESIGN.md — Taylormade Creative
+# DESIGN.md — Taylormade Creative Print
 
 ## Register & strategy
-Brand register. Color strategy: **Bold Pop, full palette** — a warm off-white surface carries the page, and three saturated pops (electric blue, hot pink, sunny yellow) each play a deliberate role. Colorful and fun, but disciplined and spacious so it reads premium, not chaotic. Color-blocked full-bleed sections for the two services (blue = social, pink = print), near-black for the portal and closing CTA. Big confident display type, generous negative space, playful rotated cards/chips and soft blobs. Not a deck, not a template, not the old black/gold version.
+Brand register, print-atelier direction. The page reads like a **specimen sheet / print order ticket**: warm paper surface, editorial Fraunces display, tactile detailing (perforated ticket edge, dotted price leaders, rotated print-piece "polaroids", paper grain). Color strategy is **committed**: paper carries most of the surface, one rubine magenta does the accent and CTA work, with an ink near-black for the order desk and a magenta-deep drench for the events + closing sections. Not the old Bold-Pop three-color version; not a template; not a deck.
 
-## Color (hex are the approved brand swatches; never #000/#fff)
-- `--paper`   #FAF7F2   /* warm off-white, page surface */
-- `--paper-2` #F1EBDF   /* raised warm panels */
-- `--ink`     #121318   /* near-black: text, portal, CTA */
-- `--ink-soft`#4A4C56   /* secondary text */
-- `--blue`    #2E5BFF (deep #1E42D6)   /* social block, primary CTA, links */
-- `--pink`    #FF4FA3 (deep #E23A8B)   /* print block, accents */
-- `--yellow`  #FFD23F (deep #EFBC1C)   /* highlights, CTA-on-dark, energy */
-Each color owns a role; don't flood. On the blue block use white text; on the pink block use ink text (contrast). Accent words use a soft same-color underline highlight (`.hl`).
+## Color (OKLCH-tinted; never #000/#fff)
+- `--paper`        #FAF5EC  /* warm off-white, page surface */
+- `--paper-2`      #F2EADB  /* raised warm panels (how-it-works) */
+- `--paper-bright` #FFFDF6  /* photo frames, inputs */
+- `--ink`          #221419  /* warm near-black: order desk, footer, text */
+- `--ink-2`        #3A2530  /* hover on ink */
+- `--ink-soft`     #6E5C63  /* secondary text */
+- `--magenta`      #C42463  /* accent, CTA, eyebrows */
+- `--magenta-deep` #99164A  /* events + closing CTA drench, hover */
+- `--blue`         #2E5BFF  /* logo dot + registration-mark ghost only */
+- `--yellow`       #FFD23F  /* on-magenta eyebrow/ticks + closing accent word */
+- `--on-magenta`   #FFF7EE  /* text on magenta surfaces */
+Magenta owns the accent role; don't flood it. On the magenta-deep sections, eyebrows/ticks/accent word go yellow, body goes warm-white.
 
 ## Type
-- **Display:** Bricolage Grotesque (700/800). Hero + section headers, tight tracking.
-- **Body / UI:** Space Grotesk (400–700). Body capped ~54ch.
-- **Serif accent:** Fraunces (italic) for the occasional emphasis word only.
-- Scale ratio ≥ 1.25. Hero display clamp(2.7rem, 7.2vw, 6.2rem). Weight + color do the hierarchy work.
+- **Display:** Fraunces (soft, wonky optical axis), ~580 weight, italic for accent words ("keep.", "they can't miss."). Hero clamp(2.9rem, 9.4vw, 6.4rem), section heads clamp(1.9rem, 4.4vw, 3rem).
+- **Body / UI:** Space Grotesk (400–700). Body capped ~56ch. Eyebrows are uppercase Space Grotesk with letter-spacing.
+- Weight + color + the display/sans contrast do the hierarchy work.
 
 ## Motion (Emil + taste)
-- Transitions on transform/opacity only. Custom ease-out `cubic-bezier(.23,1,.32,1)`. No bounce, no elastic. < 320ms for UI.
-- Entrances: subtle rise + fade on scroll (IntersectionObserver), staggered, `prefers-reduced-motion` guarded.
-- Micro: scale-on-press 0.97 for buttons, underline wipes on nav links, kinetic marquee, soft pulse on the scarcity dot. Hardware-accelerated.
+- Transform/opacity only, custom ease-out `cubic-bezier(.23,1,.32,1)`. No bounce, no elastic. UI transitions < 320ms.
+- Hero: staggered load-in rise + a one-shot "registration mark" reveal (blue/magenta misprint ghosts converge into the headline), reduced-motion guarded.
+- Scroll reveals via IntersectionObserver, staggered. Marquee is a linear infinite band. Buttons scale 0.97 on press; nav underline wipes; sticky mobile CTA slides up after the hero and hides over the order desk.
+- `prefers-reduced-motion`: all of it collapses to static.
 
 ## Layout
-- Full-bleed color-blocked sections; asymmetric service rows (zig-zag, copy + floating-image/chip art). Vary spacing for rhythm. No reflex card grids; work gallery is a masonry (CSS columns).
-- Real client photos only, shown as rotated bordered cards on the social block and in the work gallery (lightbox on click).
-- Mobile-first. Sticky slim nav with animated hamburger sheet. One-column stacks under 860px; hero side-cards hidden on mobile.
+- Mobile-first, one column under ~720–1000px. Sticky slim nav, animated hamburger full-sheet menu.
+- Hero: asymmetric split, copy left, stacked rotated print pieces right (hidden on mobile).
+- Price list is a **specimen list** (photo thumb + name + dotted leader + "From $X"), grouped by category, rows link into the order form and preselect the product. Not a card grid.
+- Order desk is a **ticket**: perforated top, numbered fieldsets (01/02/03), product photos as a scroll-snapping chip row (grid on desktop), a dropzone with per-file progress, and a success ticket with a `TC-XXXX` ref.
 
 ## Banned (in addition to impeccable's)
-Photos of Nelson, any About/founder section, any service beyond social + print. Black/gold (the old register). Side-stripe borders, gradient text, decorative glass, hero-metric template, identical card grids, modals, em dashes, pricing.
+Photos of Nelson, any About/founder section, any service beyond print + event branding. The old Bold-Pop / black-gold registers. Side-stripe borders, gradient text, decorative glass, hero-metric template, identical card grids, modals, em dashes, pricing beyond the approved "From $X" list, any named supplier.

@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Taylormade Creative · Premium Printing &amp; Event Branding</title>
-<meta name="description" content="Premium print and event branding, done exceptionally well. Business cards, flyers, banners, signage, stickers, and fully matching vendor setups. Upload, approve a proof, and I handle production. Nationwide shipping." />
+<meta name="description" content="Premium print and event branding, done exceptionally well. Business cards, banners, signage, stickers, and fully matching vendor setups. Send your files, approve a proof, and I handle production. Nationwide shipping." />
 <link rel="canonical" href="https://print.taylormadecreative.net/" />
-<meta name="theme-color" content="#FF4FA3" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='6' cy='16' r='5' fill='%232E5BFF'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23FF4FA3'/%3E%3Ccircle cx='26' cy='16' r='5' fill='%23FFD23F'/%3E%3C/svg%3E" />
+<meta name="theme-color" content="#FAF5EC" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='6' cy='16' r='5' fill='%232E5BFF'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23C42463'/%3E%3Ccircle cx='26' cy='16' r='5' fill='%23FFD23F'/%3E%3C/svg%3E" />
 <meta property="og:title" content="Taylormade Creative · Premium Printing &amp; Event Branding" />
-<meta property="og:description" content="Print people don't throw away. Cards, banners, signage, stickers, and fully matching vendor setups, on premium stocks with nationwide shipping." />
+<meta property="og:description" content="Print people keep. Cards, banners, signage, stickers, and fully matching vendor setups on premium stocks, shipped nationwide. Send your files and get a quote the same day." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://print.taylormadecreative.net/" />
 <meta property="og:image" content="https://print.taylormadecreative.net/assets/img/site/og-image.jpg" />
@@ -17,8 +17,8 @@
 <meta name="twitter:image" content="https://print.taylormadecreative.net/assets/img/site/og-image.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Fraunces:ital,opsz,wght@1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/site.css?v=5" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..700,0,1;1,9..144,400..700,0,1&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/site.css?v=8" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -47,179 +47,180 @@
 </head>
 <body>
 
+<a class="skip-link" href="#order">Skip to the order form</a>
+
 <!-- ====================== NAV ====================== -->
 <header class="nav" id="nav">
-  <a class="brand" href="#top" aria-label="Taylormade Creative home">
+  <a class="brand" href="#top" aria-label="Taylormade Creative Print, back to top">
     <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
-    <span class="brand-tx">Taylormade<small>Creative Print</small></span>
+    <span class="brand-tx">Taylormade<small>Print</small></span>
   </a>
   <nav class="nav-links" aria-label="Primary">
-    <a class="ulink" href="#products">Products</a>
+    <a class="ulink" href="#prices">Price list</a>
     <a class="ulink" href="#events">Event branding</a>
     <a class="ulink" href="#how">How it works</a>
-    <a class="ulink" href="#portal">Portal</a>
-    <a class="ulink" href="https://social.taylormadecreative.net">Social →</a>
+    <a class="ulink" href="portal/">Client login</a>
   </nav>
   <div class="nav-cta">
-    <a class="nav-login" href="portal/">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      Client login
-    </a>
-    <a class="btn btn-yellow" href="#quote">Get a print quote <span class="arr">→</span></a>
+    <a class="btn btn-ink btn-sm" href="#order">Start your order <span class="arr" aria-hidden="true">&rarr;</span></a>
   </div>
   <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileSheet">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div class="mobile-sheet" id="mobileSheet">
-  <a href="#products">Products</a>
-  <a href="#events">Event branding</a>
-  <a href="#how">How it works</a>
-  <a href="#portal">Portal</a>
-  <a href="https://social.taylormadecreative.net">Social →</a>
-  <a href="portal/">Client login</a>
-  <a href="#quote" class="ms-cta">Get a print quote →</a>
+<div class="mobile-sheet" id="mobileSheet" aria-hidden="true">
+  <nav aria-label="Mobile">
+    <a href="#prices">Price list</a>
+    <a href="#events">Event branding</a>
+    <a href="#how">How it works</a>
+    <a href="#portal">Already a client?</a>
+    <a href="portal/">Client login</a>
+    <a href="https://social.taylormadecreative.net">The social studio</a>
+  </nav>
+  <a class="btn btn-magenta ms-cta" href="#order">Start your order <span class="arr" aria-hidden="true">&rarr;</span></a>
 </div>
 
-<main>
-<!-- ====================== HERO ====================== -->
-<section class="hero" id="top">
-  <span class="glow glow-blue" aria-hidden="true"></span>
-  <span class="glow glow-pink" aria-hidden="true"></span>
-  <div class="hero-grid">
-    <div class="hero-content">
-      <span class="eyebrow on-color">Premium printing + event branding</span>
-      <h1 class="h-display">
-        Print that gets you<br><span class="hl hl-yellow">noticed.</span>
-      </h1>
-      <p class="lead">Business cards, banners, signage, stickers, door hangers, and fully matching event setups, on premium stocks. Upload your art, approve a proof, and I handle production and shipping.</p>
-      <div class="hero-actions">
-        <a class="btn btn-yellow" href="#quote">Get a print quote <span class="arr">→</span></a>
-        <a class="btn btn-ghost-light" href="#products">See what I print</a>
-      </div>
-      <div class="trust-row">
-        <div class="avatars">
-          <img src="assets/img/print/business-cards.jpg" alt="" loading="lazy" />
-          <img src="assets/img/print/popup.jpg" alt="" loading="lazy" />
-          <img src="assets/img/print/stickers.jpg" alt="" loading="lazy" />
-          <img src="assets/img/print/posters.jpg" alt="" loading="lazy" />
-        </div>
-        <span>Premium stocks, fast turnaround, and nationwide shipping.</span>
-      </div>
-    </div>
+<main id="top">
 
-    <div class="hero-visual" aria-hidden="true">
-      <div class="dash">
-        <div class="dash-head">
-          <span class="dash-logo"><i></i><i></i><i></i></span>
-          <span class="dash-welcome"><b>Welcome back</b><small>Here is what's happening with your print orders.</small></span>
-        </div>
-        <div class="dash-stats">
-          <div class="ds"><b>2</b><span>Active orders</span></div>
-          <div class="ds"><b>1</b><span>Proof to approve</span></div>
-          <div class="ds"><b>3</b><span>In production</span></div>
-          <div class="ds"><b>5</b><span>Shipped</span></div>
-        </div>
-        <div class="dash-sub">Your recent orders</div>
-        <div class="dash-thumbs">
-          <img src="assets/img/print/business-cards.jpg" alt="" loading="lazy" />
-          <img src="assets/img/print/posters.jpg" alt="" loading="lazy" />
-          <img src="assets/img/print/popup.jpg" alt="" loading="lazy" />
-          <img src="assets/img/print/stickers.jpg" alt="" loading="lazy" />
-        </div>
-        <div class="dash-order">
-          <span class="do-ic"></span>
-          <span class="do-tx"><b>Business cards</b><small>Order #1042 · in production</small></span>
-          <span class="do-bar"><i style="width:62%"></i></span>
-          <span class="do-pct">62%</span>
-        </div>
+<!-- ====================== HERO ====================== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow" data-load="1">Premium printing + event branding</p>
+      <h1 class="h-display">
+        <span class="reg" data-load="2"><span class="reg-ghost g-blue" aria-hidden="true">Print people</span><span class="reg-ghost g-magenta" aria-hidden="true">Print people</span>Print people</span>
+        <span class="reg reg-accent" data-load="3"><span class="reg-ghost g-blue" aria-hidden="true">keep.</span><span class="reg-ghost g-magenta" aria-hidden="true">keep.</span><em>keep.</em></span>
+      </h1>
+      <p class="lead" data-load="4">Business cards, banners, signage, stickers, and full event setups on premium stocks. Send me your files, approve your proof, and it ships to your door.</p>
+      <div class="hero-actions" data-load="5">
+        <a class="btn btn-magenta" href="#order">Start your order <span class="arr" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn-ghost" href="#prices">See the price list</a>
       </div>
-      <div class="phone">
-        <div class="ph-top">Order status<small>This week</small></div>
-        <div class="ph-list">
-          <div class="ph-row"><span class="ph-th th1"></span><span class="ph-mt"><b>Business cards</b><small>Production</small></span></div>
-          <div class="ph-row"><span class="ph-th th2"></span><span class="ph-mt"><b>Pop-up banner</b><small>Proof ready</small></span></div>
-          <div class="ph-row"><span class="ph-th th3"></span><span class="ph-mt"><b>Stickers</b><small>Shipped</small></span></div>
-        </div>
-      </div>
+      <p class="microline" data-load="6">Same-day quotes &middot; Proof before anything prints &middot; Nationwide shipping</p>
+    </div>
+    <div class="hero-art" aria-hidden="true" data-load="4">
+      <figure class="print-piece pp-1"><img src="assets/img/print/business-cards.jpg" alt="" width="640" height="640" /><figcaption>Business cards &middot; 16pt</figcaption></figure>
+      <figure class="print-piece pp-2"><img src="assets/img/print/popup.jpg" alt="" width="640" height="640" loading="lazy" /><figcaption>Pop-up banner &middot; 33&times;80"</figcaption></figure>
+      <figure class="print-piece pp-3"><img src="assets/img/print/stickers.jpg" alt="" width="640" height="640" loading="lazy" /><figcaption>Die-cut stickers</figcaption></figure>
     </div>
   </div>
-  <div class="scroll-cue"><span class="dot"></span> Scroll</div>
 </section>
 
 <!-- ====================== MARQUEE ====================== -->
-<div class="proof" aria-hidden="true">
+<div class="ink-band" aria-hidden="true">
   <div class="marquee">
-    <span>Business cards</span><span class="sep">✷</span><span>Tri-fold brochures</span><span class="sep">✷</span><span>Door hangers</span><span class="sep">✷</span><span>Pop-up banners</span><span class="sep">✷</span><span>Step &amp; repeats</span><span class="sep">✷</span><span>Stickers &amp; labels</span><span class="sep">✷</span><span>Yard signs</span><span class="sep">✷</span><span>Event branding</span><span class="sep">✷</span>
-    <span>Business cards</span><span class="sep">✷</span><span>Tri-fold brochures</span><span class="sep">✷</span><span>Door hangers</span><span class="sep">✷</span><span>Pop-up banners</span><span class="sep">✷</span><span>Step &amp; repeats</span><span class="sep">✷</span><span>Stickers &amp; labels</span><span class="sep">✷</span><span>Yard signs</span><span class="sep">✷</span><span>Event branding</span><span class="sep">✷</span>
+    <div class="marquee-track">
+      <span>Business cards</span><i>&#10039;</i><span>Tri-fold brochures</span><i>&#10039;</i><span>Door hangers</span><i>&#10039;</i><span>Pop-up banners</span><i>&#10039;</i><span>Step &amp; repeats</span><i>&#10039;</i><span>Stickers &amp; labels</span><i>&#10039;</i><span>Yard signs</span><i>&#10039;</i><span>Event branding</span><i>&#10039;</i>
+      <span>Business cards</span><i>&#10039;</i><span>Tri-fold brochures</span><i>&#10039;</i><span>Door hangers</span><i>&#10039;</i><span>Pop-up banners</span><i>&#10039;</i><span>Step &amp; repeats</span><i>&#10039;</i><span>Stickers &amp; labels</span><i>&#10039;</i><span>Yard signs</span><i>&#10039;</i><span>Event branding</span><i>&#10039;</i>
+    </div>
   </div>
 </div>
 
-<!-- ====================== INTRO ====================== -->
-<section class="section intro">
-  <div class="wrap intro-grid">
-    <p class="big-statement" data-reveal>Print done <span class="serif-em">exceptionally.</span> Anyone can send a file to a printer. I design it right, print it on premium stocks, and make sure it lands looking like a brand your competitors can feel.</p>
-    <figure class="intro-art" data-reveal data-d="1" aria-hidden="true"><img src="assets/img/site/print-scene.jpg" alt="" width="725" height="900" loading="lazy" /></figure>
+<!-- ====================== STATEMENT ====================== -->
+<section class="section statement">
+  <div class="wrap statement-grid">
+    <div class="statement-copy" data-reveal>
+      <p class="eyebrow">N&deg; 01 &middot; The difference</p>
+      <p class="big-statement">Anyone can send a file to a printer. I make sure what comes back <em class="serif-em">feels like a brand.</em></p>
+      <p class="statement-sub">Fourteen years of design behind every job. Files set up right the first time, stocks you notice the moment you pick them up, and one person answering for all of it, from quote to doorstep.</p>
+    </div>
+    <figure class="statement-art" data-reveal data-d="1">
+      <img src="assets/img/site/print-scene.jpg" alt="Premium printed pieces arranged on a work table" width="725" height="900" loading="lazy" />
+      <figcaption>Set up right. Printed on stocks you can feel.</figcaption>
+    </figure>
   </div>
 </section>
 
-<!-- ====================== WHAT WE PRINT ====================== -->
-<section class="section whatwedo" style="padding-top:0">
+<!-- ====================== PRICE LIST ====================== -->
+<section class="section prices" id="prices">
   <div class="wrap">
-    <div class="wwd-row" data-reveal>
-      <div class="wwd"><i class="d-pink"></i><b>Cards &amp; stationery</b><span>Premium stocks &amp; finishes</span></div>
-      <div class="wwd"><i class="d-yellow"></i><b>Banners &amp; signage</b><span>Pop-ups, yard signs, backdrops</span></div>
-      <div class="wwd"><i class="d-blue"></i><b>Stickers &amp; labels</b><span>Any shape, die-cut available</span></div>
-    </div>
-    <div class="wwd-row offset" data-reveal data-d="1">
-      <div class="wwd"><i class="d-yellow"></i><b>Event branding</b><span>Tents, table throws &amp; more</span></div>
-      <div class="wwd"><i class="d-blue"></i><b>Design included</b><span>Print-ready art, done for you</span></div>
-      <div class="wwd"><i class="d-pink"></i><b>Proof &amp; portal</b><span>Approve before it prints</span></div>
-    </div>
-  </div>
-</section>
+    <header class="sec-head" data-reveal>
+      <p class="eyebrow">N&deg; 02 &middot; The price list</p>
+      <h2 class="h-sec">Straightforward prices, premium stocks.</h2>
+      <p class="lead">Starting points for the products brands order most. Every job is quoted to your exact size, stock, and quantity, so you always get the best rate.</p>
+    </header>
 
-<!-- ====================== PRINT PRODUCTS ====================== -->
-<section class="section printcat" id="products">
-  <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <div class="sh-l">
-        <span class="eyebrow">Premium printing</span>
-        <h2 class="h1">Everything you need to print, in one place.</h2>
-      </div>
-      <p class="lead">The products brands order most, on premium stocks with fast turnaround and nationwide shipping. Prices below are starting points; every job is quoted to your exact size and quantity, so you always get the best rate.</p>
+    <div class="pricelist" data-reveal>
+      <h3 class="pl-group">Paper goods</h3>
+      <a class="pl-row" href="#order" data-product="Business cards">
+        <img src="assets/img/print/business-cards.jpg" alt="" width="640" height="640" loading="lazy" />
+        <span class="pl-name">Business cards <small>500 &middot; premium stocks &amp; finishes</small></span>
+        <span class="pl-dots" aria-hidden="true"></span>
+        <span class="pl-price">From $39</span>
+      </a>
+      <a class="pl-row" href="#order" data-product="Flyers">
+        <img src="assets/img/print/flyers.jpg" alt="" width="640" height="640" loading="lazy" />
+        <span class="pl-name">Flyers <small>100 &middot; full color</small></span>
+        <span class="pl-dots" aria-hidden="true"></span>
+        <span class="pl-price">From $49</span>
+      </a>
+      <a class="pl-row" href="#order" data-product="Postcards">
+        <img src="assets/img/print/postcards.jpg" alt="" width="640" height="640" loading="lazy" />
+        <span class="pl-name">Postcards <small>500 &middot; mailer-ready</small></span>
+        <span class="pl-dots" aria-hidden="true"></span>
+        <span class="pl-price">From $75</span>
+      </a>
+      <a class="pl-row" href="#order" data-product="Tri-fold brochures">
+        <img src="assets/img/print/brochures.jpg" alt="" width="640" height="640" loading="lazy" />
+        <span class="pl-name">Tri-fold brochures <small>500 &middot; folded &amp; finished</small></span>
+        <span class="pl-dots" aria-hidden="true"></span>
+        <span class="pl-price">From $169</span>
+      </a>
+      <a class="pl-row" href="#order" data-product="Posters">
+        <img src="assets/img/print/posters.jpg" alt="" width="640" height="640" loading="lazy" />
+        <span class="pl-name">Posters <small>18&times;24" &middot; larger sizes available</small></span>
+        <span class="pl-dots" aria-hidden="true"></span>
+        <span class="pl-price">From $19</span>
+      </a>
+      <a class="pl-row" href="#order" data-product="Door hangers">
+        <img src="assets/img/print/door-hangers.jpg" alt="" width="640" height="640" loading="lazy" />
+        <span class="pl-name">Door hangers <small>25 &middot; die-cut</small></span>
+        <span class="pl-dots" aria-hidden="true"></span>
+        <span class="pl-price">From $29</span>
+      </a>
+
+      <h3 class="pl-group">Signage &amp; large format</h3>
+      <a class="pl-row" href="#order" data-product="Pop-up banners">
+        <img src="assets/img/print/popup.jpg" alt="" width="640" height="640" loading="lazy" />
+        <span class="pl-name">Pop-up banners <small>stand included</small></span>
+        <span class="pl-dots" aria-hidden="true"></span>
+        <span class="pl-price">From $149</span>
+      </a>
+      <a class="pl-row" href="#order" data-product="Step & repeats">
+        <img src="assets/img/print/step-repeat.jpg" alt="" width="640" height="640" loading="lazy" />
+        <span class="pl-name">Step &amp; repeats <small>8&times;8 ft backdrop</small></span>
+        <span class="pl-dots" aria-hidden="true"></span>
+        <span class="pl-price">From $299</span>
+      </a>
+      <a class="pl-row" href="#order" data-product="Yard signs">
+        <img src="assets/img/print/yard-signs.jpg" alt="" width="640" height="640" loading="lazy" />
+        <span class="pl-name">Yard signs <small>18&times;24" &middot; stakes available</small></span>
+        <span class="pl-dots" aria-hidden="true"></span>
+        <span class="pl-price">From $15</span>
+      </a>
+
+      <h3 class="pl-group">Stickers &amp; labels</h3>
+      <a class="pl-row" href="#order" data-product="Stickers & labels">
+        <img src="assets/img/print/stickers.jpg" alt="" width="640" height="640" loading="lazy" />
+        <span class="pl-name">Stickers &amp; labels <small>100 &middot; any shape, die-cut available</small></span>
+        <span class="pl-dots" aria-hidden="true"></span>
+        <span class="pl-price">From $39</span>
+      </a>
     </div>
 
-    <div class="pc-grid" data-reveal>
-      <article class="pcard"><img class="pc-img" src="assets/img/print/business-cards.jpg" alt="Business cards" loading="lazy"><span class="pc-tag">Most popular</span><div class="pc-body"><h3>Business cards</h3><span class="pc-price">From $39 <small>500</small></span></div></article>
-      <article class="pcard"><img class="pc-img" src="assets/img/print/flyers.jpg" alt="Flyers" loading="lazy"><div class="pc-body"><h3>Flyers</h3><span class="pc-price">From $49 <small>100</small></span></div></article>
-      <article class="pcard"><img class="pc-img" src="assets/img/print/posters.jpg" alt="Posters" loading="lazy"><div class="pc-body"><h3>Posters</h3><span class="pc-price">From $19 <small>18&times;24"</small></span></div></article>
-      <article class="pcard"><img class="pc-img" src="assets/img/print/postcards.jpg" alt="Postcards" loading="lazy"><div class="pc-body"><h3>Postcards</h3><span class="pc-price">From $75 <small>500</small></span></div></article>
-      <article class="pcard"><img class="pc-img" src="assets/img/print/brochures.jpg" alt="Tri-fold brochures" loading="lazy"><div class="pc-body"><h3>Tri-fold brochures</h3><span class="pc-price">From $169 <small>500</small></span></div></article>
-      <article class="pcard"><img class="pc-img" src="assets/img/print/popup.jpg" alt="Pop-up banners" loading="lazy"><div class="pc-body"><h3>Pop-up banners</h3><span class="pc-price">From $149 <small>stand incl.</small></span></div></article>
-      <article class="pcard"><img class="pc-img" src="assets/img/print/step-repeat.jpg" alt="Step and repeat banners" loading="lazy"><div class="pc-body"><h3>Step &amp; repeats</h3><span class="pc-price">From $299 <small>8&times;8 ft</small></span></div></article>
-      <article class="pcard"><img class="pc-img" src="assets/img/print/stickers.jpg" alt="Stickers and labels" loading="lazy"><div class="pc-body"><h3>Stickers &amp; labels</h3><span class="pc-price">From $39 <small>100</small></span></div></article>
-      <article class="pcard"><img class="pc-img" src="assets/img/print/yard-signs.jpg" alt="Yard signs" loading="lazy"><div class="pc-body"><h3>Yard signs</h3><span class="pc-price">From $15 <small>18&times;24"</small></span></div></article>
-      <article class="pcard"><img class="pc-img" src="assets/img/print/door-hangers.jpg" alt="Door hangers" loading="lazy"><div class="pc-body"><h3>Door hangers</h3><span class="pc-price">From $29 <small>25</small></span></div></article>
-      <article class="pcard pc-more"><div class="pc-body"><h3>And much more</h3><span>Booklets, menus, banners, magnets, and more</span></div></article>
-    </div>
-
-    <div class="pc-features" data-reveal>
-      <span>Premium quality</span><i>·</i><span>Fast turnaround</span><i>·</i><span>Same-day quotes</span><i>·</i><span>Wide selection</span><i>·</i><span>Nationwide shipping</span>
-    </div>
-    <div class="pc-cta" data-reveal><a class="btn btn-blue" href="#quote">Get a print quote <span class="arr">→</span></a></div>
+    <p class="pl-note" data-reveal>Also printing booklets, menus, magnets, table throws, feather flags, and more. Tap any product to start your order, and I will quote it the same day.</p>
   </div>
 </section>
 
 <!-- ====================== EVENT BRANDING ====================== -->
-<section class="svc-block svc-pink" id="events">
-  <div class="wrap svc-inner reverse">
-    <div class="svc-copy" data-reveal>
-      <span class="eyebrow on-color">Event &amp; vendor branding</span>
-      <h2 class="h1">Show up looking like the main sponsor.</h2>
-      <p class="svc-lead">Vendor table, pop-up shop, or expo booth, I make the whole setup match. Tent, table throw, pop-up banners, step-and-repeat backdrop, and signage, all designed and printed together so your brand looks unmistakable.</p>
-      <ul class="ticks pink">
+<section class="section events" id="events">
+  <div class="wrap events-grid">
+    <div class="events-copy" data-reveal>
+      <p class="eyebrow on-color">N&deg; 03 &middot; Event &amp; vendor branding</p>
+      <h2 class="h-sec">Show up looking like the main sponsor.</h2>
+      <p class="lead on-color">Vendor table, pop-up shop, or expo booth: I design and print the whole setup to match. Tent, table throw, banners, backdrop, and signage in one unmistakable look.</p>
+      <ul class="ticks">
         <li>Branded tents and canopies</li>
         <li>Fitted table throws and runners</li>
         <li>Retractable pop-up banners</li>
@@ -227,156 +228,227 @@
         <li>Signage, feather flags, and more</li>
         <li>One matching look, head to toe</li>
       </ul>
-      <a class="svc-link on-ink" href="#quote">Quote my event setup <span class="arr">→</span></a>
+      <a class="btn btn-paper" href="#order" data-product="Event setup">Quote my event setup <span class="arr" aria-hidden="true">&rarr;</span></a>
     </div>
-    <div class="svc-art" data-reveal data-d="1" aria-hidden="true">
-      <div class="print-stack">
-        <img class="ps-img" src="assets/img/site/vendor-booth.jpg" alt="Vendor booth with fully matching branded tent, table throw, pop-up banner, and signage" width="725" height="900" loading="lazy" />
-        <span class="chip chip-1">Pop-up banners</span>
-        <span class="chip chip-2">Tents &amp; table throws</span>
-        <span class="chip chip-3">Signage</span>
-      </div>
-    </div>
+    <figure class="events-art" data-reveal data-d="1">
+      <img src="assets/img/site/vendor-booth.jpg" alt="Vendor booth with fully matching branded tent, table throw, pop-up banner, and signage" width="725" height="900" loading="lazy" />
+      <figcaption>Full vendor setup &middot; designed and printed together</figcaption>
+    </figure>
   </div>
 </section>
 
 <!-- ====================== HOW IT WORKS ====================== -->
-<section class="section" id="how">
+<section class="section how" id="how">
   <div class="wrap">
-    <div class="sec-head center" data-reveal>
-      <span class="eyebrow">How it works</span>
-      <h2 class="h1">From idea to your doorstep in four steps.</h2>
-      <p class="lead">No printer jargon, no guesswork. You tell me what you need, I handle the rest, and you approve before anything prints.</p>
-    </div>
-    <div class="plan-grid" data-reveal>
-      <article class="plan">
-        <div class="plan-name">1 · Quote</div>
-        <p>Tell me what you need. I send a clear price and timeline, usually the same day.</p>
-      </article>
-      <article class="plan">
-        <div class="plan-name">2 · Design</div>
-        <p>Send your art, or I design it print-ready for you. Either way, it's set up correctly.</p>
-      </article>
-      <article class="plan">
-        <div class="plan-name">3 · Proof</div>
-        <p>You approve a digital proof in your portal. Nothing prints until you say go.</p>
-      </article>
-      <article class="plan">
-        <div class="plan-name">4 · Produced</div>
-        <p>It prints on premium stock and ships to your door, anywhere in the country.</p>
-      </article>
-    </div>
+    <header class="sec-head" data-reveal>
+      <p class="eyebrow">N&deg; 04 &middot; How it works</p>
+      <h2 class="h-sec">From files to your doorstep.</h2>
+    </header>
+    <ol class="steps" data-reveal>
+      <li class="step">
+        <span class="step-no" aria-hidden="true">01</span>
+        <h3>Quote</h3>
+        <p>Tell me what you need. Clear price and timeline, usually the same day.</p>
+      </li>
+      <li class="step">
+        <span class="step-no" aria-hidden="true">02</span>
+        <h3>Design</h3>
+        <p>Send your art, or have me design it print-ready for you. Either way the file is set up correctly.</p>
+      </li>
+      <li class="step">
+        <span class="step-no" aria-hidden="true">03</span>
+        <h3>Proof</h3>
+        <p>You approve a digital proof before anything prints. No surprises.</p>
+      </li>
+      <li class="step">
+        <span class="step-no" aria-hidden="true">04</span>
+        <h3>Delivered</h3>
+        <p>Printed on premium stock and shipped to your door, anywhere in the country.</p>
+      </li>
+    </ol>
   </div>
 </section>
 
-<!-- ====================== PORTAL ====================== -->
-<section class="section" id="portal">
+<!-- ====================== ORDER DESK ====================== -->
+<section class="section order" id="order">
   <div class="wrap">
-    <div class="portal" data-reveal>
-      <div class="portal-copy">
-        <span class="eyebrow">The client portal</span>
-        <h2 class="h1">Order, approve, and track in one place.</h2>
-        <p class="lead">Every client gets a private dashboard. Place a print order, upload your art, approve your proof, and watch it move from production to shipped. No email chains, no guessing.</p>
-        <ul class="ticks">
-          <li>Place and reorder print jobs in a click</li>
-          <li>Upload your art straight to me</li>
-          <li>Approve a digital proof before it prints</li>
-          <li>Track every order from proof to shipped</li>
-        </ul>
-        <div class="portal-actions"><a class="btn btn-blue" href="portal/">Client login <span class="arr">→</span></a></div>
+    <header class="sec-head on-ink" data-reveal>
+      <p class="eyebrow on-ink-color">N&deg; 05 &middot; The order desk</p>
+      <h2 class="h-sec">Send me your files. I'll take it from here.</h2>
+      <p class="lead">Takes about a minute. You get a quote the same day, straight from the designer running your job.</p>
+    </header>
+
+    <form class="ticket" id="orderForm" novalidate data-reveal>
+      <div class="ticket-head" aria-hidden="true">
+        <span class="mark"><i></i><i></i><i></i></span>
+        <span class="ticket-title">Order form</span>
+        <span class="ticket-ref" id="ticketRef">N&deg; ____</span>
       </div>
-      <div class="portal-visual" aria-hidden="true">
-        <div class="portal-window">
-          <div class="pw-bar"><i></i><i></i><i></i><span class="pw-title">Your orders · this week</span></div>
-          <div class="pw-body">
-            <div class="pw-row"><div class="pw-thumb t1"></div><div class="pw-lines"><b></b><b class="short"></b></div><span class="pw-pill ok">Shipped</span></div>
-            <div class="pw-row"><div class="pw-thumb t2"></div><div class="pw-lines"><b></b><b class="short"></b></div><span class="pw-pill rev">Proof</span></div>
-            <div class="pw-row"><div class="pw-thumb t3"></div><div class="pw-lines"><b></b><b class="short"></b></div><span class="pw-pill sch">Production</span></div>
-            <div class="pw-row"><div class="pw-thumb t4"></div><div class="pw-lines"><b></b><b class="short"></b></div><span class="pw-pill ok">Delivered</span></div>
+
+      <fieldset class="tf">
+        <legend><span class="tf-no" aria-hidden="true">01</span> What are we printing?</legend>
+        <div class="chips" id="productChips" role="radiogroup" aria-label="Product">
+          <label class="chip"><input type="radio" name="product" value="Business cards" /><img src="assets/img/print/business-cards.jpg" alt="" loading="lazy" /><span>Business cards</span></label>
+          <label class="chip"><input type="radio" name="product" value="Flyers" /><img src="assets/img/print/flyers.jpg" alt="" loading="lazy" /><span>Flyers</span></label>
+          <label class="chip"><input type="radio" name="product" value="Postcards" /><img src="assets/img/print/postcards.jpg" alt="" loading="lazy" /><span>Postcards</span></label>
+          <label class="chip"><input type="radio" name="product" value="Tri-fold brochures" /><img src="assets/img/print/brochures.jpg" alt="" loading="lazy" /><span>Brochures</span></label>
+          <label class="chip"><input type="radio" name="product" value="Posters" /><img src="assets/img/print/posters.jpg" alt="" loading="lazy" /><span>Posters</span></label>
+          <label class="chip"><input type="radio" name="product" value="Door hangers" /><img src="assets/img/print/door-hangers.jpg" alt="" loading="lazy" /><span>Door hangers</span></label>
+          <label class="chip"><input type="radio" name="product" value="Pop-up banners" /><img src="assets/img/print/popup.jpg" alt="" loading="lazy" /><span>Pop-up banners</span></label>
+          <label class="chip"><input type="radio" name="product" value="Step & repeats" /><img src="assets/img/print/step-repeat.jpg" alt="" loading="lazy" /><span>Step &amp; repeats</span></label>
+          <label class="chip"><input type="radio" name="product" value="Yard signs" /><img src="assets/img/print/yard-signs.jpg" alt="" loading="lazy" /><span>Yard signs</span></label>
+          <label class="chip"><input type="radio" name="product" value="Stickers & labels" /><img src="assets/img/print/stickers.jpg" alt="" loading="lazy" /><span>Stickers &amp; labels</span></label>
+          <label class="chip"><input type="radio" name="product" value="Event setup" /><img src="assets/img/site/vendor-booth.jpg" alt="" loading="lazy" /><span>Event setup</span></label>
+          <label class="chip chip-text"><input type="radio" name="product" value="Something else" /><span>Something else</span></label>
+        </div>
+        <p class="field-err" id="productErr" hidden>Pick a product so I can quote it right.</p>
+        <div class="field-row">
+          <div class="field">
+            <label for="fQty">Quantity</label>
+            <input id="fQty" name="quantity" type="text" inputmode="numeric" placeholder="e.g. 500" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="fSize">Size <small>optional</small></label>
+            <input id="fSize" name="size" type="text" placeholder='e.g. 3.5 x 2 in' autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="fDeadline">When do you need it? <small>optional</small></label>
+            <input id="fDeadline" name="deadline" type="text" placeholder="e.g. July 18, or no rush" autocomplete="off" />
           </div>
         </div>
+        <div class="field">
+          <label for="fNotes">Notes <small>optional</small></label>
+          <textarea id="fNotes" name="notes" rows="3" placeholder="Stock, finish, colors, anything I should know."></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset class="tf">
+        <legend><span class="tf-no" aria-hidden="true">02</span> Your artwork</legend>
+        <div class="drop" id="drop" tabindex="0" role="button" aria-label="Add your artwork files">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 16V4m0 0 4 4m-4-4-4 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" stroke-linecap="round"/></svg>
+          <b>Tap to add your files</b>
+          <span>PDF, PNG, JPG, AI, EPS, TIFF, PSD, or ZIP &middot; up to 12 files, 150MB each</span>
+        </div>
+        <input type="file" id="fileInput" multiple accept=".pdf,.png,.jpg,.jpeg,.ai,.eps,.svg,.tif,.tiff,.psd,.zip" hidden />
+        <ul class="filelist" id="fileList" aria-live="polite"></ul>
+        <label class="check">
+          <input type="checkbox" id="designHelp" name="designHelp" />
+          <span>I don't have print-ready art yet. Design it for me.</span>
+        </label>
+        <p class="field-err" id="filesErr" hidden>Add your files, or check the box and I will design it for you.</p>
+      </fieldset>
+
+      <fieldset class="tf">
+        <legend><span class="tf-no" aria-hidden="true">03</span> Where do I send your quote?</legend>
+        <div class="field-row">
+          <div class="field">
+            <label for="fName">Your name</label>
+            <input id="fName" name="name" type="text" autocomplete="name" required />
+            <p class="field-err" id="nameErr" hidden>Tell me your name.</p>
+          </div>
+          <div class="field">
+            <label for="fBiz">Business <small>optional</small></label>
+            <input id="fBiz" name="business" type="text" autocomplete="organization" />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="fEmail">Email</label>
+            <input id="fEmail" name="email" type="email" autocomplete="email" inputmode="email" required />
+            <p class="field-err" id="emailErr" hidden>I need a working email to send your quote.</p>
+          </div>
+          <div class="field">
+            <label for="fPhone">Phone <small>optional</small></label>
+            <input id="fPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" />
+          </div>
+        </div>
+        <input type="text" name="website" id="fWebsite" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp" />
+      </fieldset>
+
+      <div class="ticket-foot">
+        <button class="btn btn-magenta btn-submit" id="submitBtn" type="submit">Send my order request <span class="arr" aria-hidden="true">&rarr;</span></button>
+        <p class="ticket-fine">No payment now. You get a firm quote and a proof to approve before anything prints.</p>
+        <p class="field-err" id="submitErr" role="alert" hidden></p>
+      </div>
+    </form>
+
+    <div class="ticket ticket-done" id="orderDone" hidden aria-live="polite">
+      <div class="ticket-head" aria-hidden="true">
+        <span class="mark"><i></i><i></i><i></i></span>
+        <span class="ticket-title">Order form</span>
+        <span class="ticket-ref" id="doneRef"></span>
+      </div>
+      <div class="done-body">
+        <h3 class="h-sec">Got it<em class="serif-em">.</em></h3>
+        <p class="lead">Your request is on my desk. I will reply the same day with your quote, and you approve a proof before anything prints.</p>
+        <p class="done-meta" id="doneMeta"></p>
+        <a class="btn btn-ink" href="#top">Back to top</a>
       </div>
     </div>
+
+    <p class="order-alt" data-reveal>Prefer to talk it through? Email <a href="mailto:taylormademd@gmail.com">taylormademd@gmail.com</a> or DM <a href="https://instagram.com/taylormade_creative" target="_blank" rel="noopener">@taylormade_creative</a>. Same-day reply either way.</p>
+    <noscript><p class="order-alt">This form needs JavaScript. Email your files to <a href="mailto:taylormademd@gmail.com">taylormademd@gmail.com</a> and I will quote it the same day.</p></noscript>
   </div>
 </section>
 
-<!-- ====================== WHY ====================== -->
-<section class="section words">
-  <div class="wrap">
-    <div class="trust" data-reveal>
-      <span>Trusted by brands like</span>
-      <b>World of Baths</b><i>·</i><b>Arena Group</b><i>·</i><b>Panty Cakes</b>
+<!-- ====================== PORTAL + TRUST ====================== -->
+<section class="section portal" id="portal">
+  <div class="wrap portal-grid">
+    <div class="portal-copy" data-reveal>
+      <p class="eyebrow">Already printing with me?</p>
+      <h2 class="h-sec">Your orders, one login.</h2>
+      <p class="lead">Every client gets a private portal: place and reorder jobs, upload art, approve proofs, and watch production move to shipped. No email chains.</p>
+      <a class="btn btn-ink" href="portal/">Client login <span class="arr" aria-hidden="true">&rarr;</span></a>
     </div>
-    <div class="quotes">
-      <blockquote class="quote feature" data-reveal>
-        <p>Premium stocks, real proofs, and a designer who sets the file up right the first time. That is the difference between print that looks cheap and print people keep.</p>
-        <div class="who"><b>The Taylormade promise</b><span>14 years of design behind every job</span></div>
+    <div class="trust" data-reveal data-d="1">
+      <p class="trust-line">Trusted by brands like <b>World of Baths</b>, <b>Arena Group</b>, and <b>Panty Cakes</b>.</p>
+      <blockquote class="promise">
+        <p>Premium stocks, real proofs, and a designer who sets the file up right the first time. That is the difference between print that looks average and print people keep.</p>
+        <footer>The Taylormade promise &middot; 14 years of design behind every job</footer>
       </blockquote>
-      <blockquote class="quote" data-reveal data-d="1">
-        <p>One point of contact from quote to doorstep. You always know exactly where your order is.</p>
-        <div class="who"><b>How it should feel</b><span>Order, approve, track, done</span></div>
-      </blockquote>
     </div>
   </div>
 </section>
 
-<!-- ====================== QUOTE / BOOK ====================== -->
-<section class="section book" id="quote">
-  <div class="wrap">
-    <div class="sec-head center" data-reveal>
-      <span class="eyebrow">Get a quote</span>
-      <h2 class="h1">Tell me what you need printed.</h2>
-      <p class="lead">Fill out the quick form below with your product, quantity, and deadline. Takes about a minute, and you will get a clear price the same day, straight from the designer who runs your job.</p>
-    </div>
-    <div class="book-frame" data-reveal>
-      <iframe src="https://taylormadecreative.hbportal.co/public/6994b1e69e9e270021da8a20" title="Request a print quote"></iframe>
-    </div>
-    <p class="book-alt" data-reveal>Prefer a full window? <a href="https://taylormadecreative.hbportal.co/public/6994b1e69e9e270021da8a20" target="_blank" rel="noopener">Open the quote form →</a></p>
-    <p class="book-alt" data-reveal>Rather just ask? Email <a href="mailto:taylormademd@gmail.com">taylormademd@gmail.com</a> or DM <a href="https://instagram.com/taylormade_creative" target="_blank" rel="noopener">@taylormade_creative</a>. Same-day reply either way.</p>
-  </div>
-</section>
-
-<!-- ====================== CTA ====================== -->
-<section class="section cta" id="contact">
-  <div class="wrap" data-reveal style="position:relative;z-index:1">
-    <span class="eyebrow on-color" style="justify-content:center">Let's print</span>
-    <h2 class="h-display cta-h">Let's make something<br>they <span class="hl hl-yellow">can't miss.</span></h2>
-    <p class="lead">Tell me about your next print run or event. I will quote it, design it right, and ship it looking like a brand.</p>
+<!-- ====================== CLOSING CTA ====================== -->
+<section class="section cta">
+  <div class="wrap" data-reveal>
+    <h2 class="h-display cta-h">Let's print something<br /><em>they can't miss.</em></h2>
     <div class="cta-actions">
-      <a class="btn btn-yellow" href="#quote">Get a print quote <span class="arr">→</span></a>
+      <a class="btn btn-paper" href="#order">Start your order <span class="arr" aria-hidden="true">&rarr;</span></a>
       <a class="btn btn-ghost-light" href="https://instagram.com/taylormade_creative" target="_blank" rel="noopener">DM on Instagram</a>
     </div>
-    <p class="scarcity center"><span class="pulse"></span> Need social media too? <a href="https://social.taylormadecreative.net" style="color:inherit;text-decoration:underline">See the social side →</a></p>
+    <p class="cta-cross">Need social media too? <a href="https://social.taylormadecreative.net">See the social studio &rarr;</a></p>
   </div>
 </section>
 
 </main>
 
 <div class="sticky-cta" id="stickyCta" aria-hidden="true">
-  <a class="btn btn-yellow" href="#quote">Get a print quote <span class="arr">→</span></a>
+  <a class="btn btn-magenta" href="#order">Start your order <span class="arr" aria-hidden="true">&rarr;</span></a>
 </div>
 
 <!-- ====================== FOOTER ====================== -->
 <footer class="footer">
   <div class="wrap">
     <div class="footer-grid">
-      <a class="brand" href="#top"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span class="brand-tx">Taylormade<small>Creative Print</small></span></a>
+      <a class="brand" href="#top"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span class="brand-tx">Taylormade<small>Print</small></span></a>
       <nav class="footer-nav" aria-label="Footer">
-        <a class="ulink" href="#products">Products</a>
-        <a class="ulink" href="#events">Event branding</a>
-        <a class="ulink" href="https://social.taylormadecreative.net">Social</a>
-        <a class="ulink" href="portal/">Client login</a>
-        <a class="ulink" href="https://instagram.com/taylormade_creative" target="_blank" rel="noopener">Instagram</a>
-        <a class="ulink" href="mailto:taylormademd@gmail.com">taylormademd@gmail.com</a>
+        <a href="#prices">Price list</a>
+        <a href="#events">Event branding</a>
+        <a href="portal/">Client login</a>
+        <a href="https://social.taylormadecreative.net">Social studio</a>
+        <a href="https://instagram.com/taylormade_creative" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:taylormademd@gmail.com">taylormademd@gmail.com</a>
       </nav>
     </div>
     <div class="footer-legal">
-      <span>© <span id="yr"></span> Taylormade Creative · Remote, with nationwide shipping</span>
+      <span>&copy; <span id="yr"></span> Taylormade Creative &middot; Remote studio, nationwide shipping</span>
       <span>Premium printing + event branding</span>
     </div>
   </div>
 </footer>
 
-<script src="js/site.js?v=5"></script>
+<script type="module" src="js/site.js?v=8"></script>
 </body>
 </html>
