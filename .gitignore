@@ -1,3 +1,4 @@
 node_modules/
 scripts/.env
 scripts/staging/
+supabase/.temp/

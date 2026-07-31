@@ -23,8 +23,15 @@ const state = {
 init();
 async function init() {
   const { data } = await sb.auth.getSession();
-  if (data.session) { state.user = data.session.user; await loadApp(); }
-  else showAuth();
+  if (data.session) { state.user = data.session.user; await loadApp(); return; }
+  showAuth();
+  // Surface a failed Google round-trip (Supabase returns these in the hash).
+  const p = new URLSearchParams(location.hash.slice(1));
+  const oauthErr = p.get("error_description") || p.get("error");
+  if (oauthErr) {
+    $("#authErr").textContent = decodeURIComponent(oauthErr).replace(/\+/g, " ");
+    history.replaceState(null, "", location.pathname);
+  }
 }
 
 function showAuth() { $("#authView").classList.remove("hidden"); $("#appView").classList.add("hidden"); }
@@ -43,12 +50,37 @@ $("#loginForm").addEventListener("submit", async (e) => {
   state.user = data.user; await loadApp();
 });
 
+$("#staffToggle").addEventListener("click", () => {
+  const form = $("#loginForm"); const t = $("#staffToggle");
+  const open = form.classList.toggle("hidden") === false;
+  t.setAttribute("aria-expanded", String(open));
+  if (open) $("#email").focus();
+});
+
+$("#googleBtn").addEventListener("click", async () => {
+  const btn = $("#googleBtn"); const err = $("#authErr");
+  err.textContent = ""; btn.disabled = true; btn.querySelector("span").textContent = "Redirecting…";
+  const { error } = await sb.auth.signInWithOAuth({
+    provider: "google",
+    options: { redirectTo: location.origin + location.pathname },
+  });
+  if (error) {
+    btn.disabled = false; btn.querySelector("span").textContent = "Continue with Google";
+    err.textContent = error.message || "Could not start Google sign-in.";
+  }
+});
+
 $("#logoutBtn").addEventListener("click", async () => { await sb.auth.signOut(); location.reload(); });
 
 /* ---------------- load app ---------------- */
 async function loadApp() {
   const { data: prof, error } = await sb.from("profiles").select("*").eq("id", state.user.id).single();
-  if (error || !prof) { await sb.auth.signOut(); showAuth(); $("#authErr").textContent = "No portal profile yet. Text Nelson."; return; }
+  if (error || !prof) {
+    const email = state.user?.email || "that account";
+    await sb.auth.signOut(); showAuth();
+    $("#authErr").textContent = `${email} isn't linked to a portal account yet. Text Nelson at (817) 707-1291 and he'll switch it on.`;
+    return;
+  }
   state.profile = prof;
   state.isAdmin = prof.role === "admin";
 

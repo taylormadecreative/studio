@@ -52,6 +52,22 @@ a{ color:inherit; }
 .btn-primary:hover{ background:var(--tc-paper); }
 .btn-primary:active{ transform:scale(0.98); }
 .btn-primary[disabled]{ opacity:0.6; cursor:wait; }
+.btn-google{ width:100%; padding:0.85rem; border-radius:999px; background:#fff; color:#1f1f1f;
+  border:1px solid var(--tc-line); font-family:inherit; font-size:0.95rem; font-weight:600; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; gap:0.65rem;
+  transition:transform .2s var(--ease), box-shadow .2s var(--ease); }
+.btn-google svg{ width:18px; height:18px; flex:none; }
+.btn-google:hover{ box-shadow:0 2px 12px rgb(0 0 0 / 0.28); }
+.btn-google:active{ transform:scale(0.98); }
+.btn-google[disabled]{ opacity:0.6; cursor:wait; }
+.staff{ margin-top:2.2rem; padding-top:1.2rem; border-top:1px solid var(--tc-line); }
+.staff-toggle{ background:none; border:0; padding:0; font-family:inherit; cursor:pointer;
+  font-size:0.78rem; letter-spacing:0.04em; color:oklch(0.52 0.012 85);
+  transition:color .2s var(--ease); }
+.staff-toggle::after{ content:" →"; }
+.staff-toggle:hover{ color:oklch(0.74 0.012 85); }
+.staff-toggle[aria-expanded="true"]::after{ content:" ↑"; }
+.staff #loginForm{ margin-top:1.2rem; }
 .auth-err{ color:oklch(0.65 0.16 25); font-size:0.85rem; margin-top:0.9rem; min-height:1.2em; }
 .auth-help{ margin-top:1.4rem; font-size:0.82rem; color:oklch(0.58 0.012 85); }
 
