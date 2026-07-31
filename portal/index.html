@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="portal.css" />
 </head>
 <body>
@@ -15,14 +15,26 @@
 <!-- ================= LOGIN ================= -->
 <section class="auth" id="authView">
   <aside class="auth-aside">
-    <div class="auth-brand"><span class="mk">T</span> Taylormade Creative</div>
-    <h1>Your brand, <em>reviewed</em> before it goes live.</h1>
-    <p>Log in to see this week's content, approve posts, order prints, and send me your footage.</p>
+    <span class="glow glow-blue"></span>
+    <span class="glow glow-pink"></span>
+
+    <a class="auth-brand" href="https://social.taylormadecreative.net/">
+      <span class="mark"><i></i><i></i><i></i></span>
+      <span class="brand-tx">Taylormade<small>Creative Social</small></span>
+    </a>
+
+    <div>
+      <p class="eyebrow">Client portal</p>
+      <h1>Your brand,<br /><span class="hl">reviewed</span><em>before it goes live.</em></h1>
+      <p class="lead">See this week's posts, approve what you love, send back notes on what you don't, and drop me your footage.</p>
+    </div>
+
+    <p class="auth-foot">Taylormade Creative · Dallas–Fort Worth</p>
   </aside>
   <main class="auth-main">
     <div class="auth-card">
       <h2>Client login</h2>
-      <p class="sub">Welcome back. Sign in to your portal.</p>
+      <p class="sub">Use the Google account you check your email with.</p>
 
       <button class="btn-google" type="button" id="googleBtn">
         <svg viewBox="0 0 18 18" aria-hidden="true" focusable="false">
@@ -39,7 +51,7 @@
       <p class="auth-help">Trouble signing in? Text Nelson at (817) 707-1291.</p>
 
       <div class="staff">
-        <button type="button" class="staff-toggle" id="staffToggle" aria-expanded="false" aria-controls="loginForm">Staff login</button>
+        <button type="button" class="staff-toggle" id="staffToggle" aria-expanded="false" aria-controls="loginForm">Staff login <span class="arr" aria-hidden="true">→</span></button>
         <form id="loginForm" class="hidden">
           <div class="field">
             <label for="email">Email</label>

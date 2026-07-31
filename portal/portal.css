@@ -4,6 +4,18 @@
    ============================================================ */
 *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
 :root{
+  /* Taylormade Social brand — mirrors css/site.css so the portal login
+     reads as the same site as social.taylormadecreative.net */
+  --tm-ink:#121318; --tm-ink2:#1B1D25; --tm-paper:#FAF7F2;
+  --tm-blue:#2E5BFF; --tm-pink:#FF4FA3;
+  --tm-yellow:#FFD23F; --tm-yellow-deep:#EFBC1C;
+  --tm-display:"Bricolage Grotesque",system-ui,sans-serif;
+  --tm-body:"Space Grotesk",system-ui,sans-serif;
+  --tm-serif:"Fraunces",Georgia,serif;
+  --tm-line:rgba(255,255,255,.14);
+  --tm-dim:rgba(255,255,255,.72);
+  --tm-dimmer:rgba(255,255,255,.46);
+
   --tc-ink: oklch(0.17 0.012 75);
   --tc-ink2: oklch(0.215 0.013 75);
   --tc-paper: oklch(0.952 0.010 85);
@@ -16,7 +28,7 @@
 html,body{ height:100%; }
 body{
   font-family:"Inter",system-ui,sans-serif;
-  background:var(--tc-ink); color:var(--tc-paper);
+  background:var(--tm-ink); color:var(--tc-paper);
   -webkit-font-smoothing:antialiased; line-height:1.5;
 }
 img{ display:block; max-width:100%; }
@@ -27,49 +39,99 @@ a{ color:inherit; }
 :focus-visible{ outline:2px solid var(--accent); outline-offset:2px; border-radius:4px; }
 .hidden{ display:none !important; }
 
-/* ---------------- LOGIN ---------------- */
-.auth{ min-height:100svh; display:grid; grid-template-columns:1.1fr 0.9fr; }
-.auth-aside{ position:relative; overflow:hidden; background:var(--tc-ink2);
-  display:flex; flex-direction:column; justify-content:space-between; padding:3rem; }
-.auth-aside::after{ content:""; position:absolute; inset:0;
-  background:radial-gradient(ellipse 80% 70% at 70% 30%, oklch(0.80 0.125 80 / 0.18), transparent 70%); }
-.auth-brand{ position:relative; z-index:1; display:flex; align-items:center; gap:0.6rem; font-family:"Bricolage Grotesque",sans-serif; font-weight:800; font-size:1.1rem; }
-.auth-brand .mk{ width:34px; height:34px; display:grid; place-items:center; border:1.5px solid var(--tc-gold); color:var(--tc-gold); border-radius:9px; font-weight:800; }
-.auth-aside h1{ position:relative; z-index:1; font-family:"Bricolage Grotesque",sans-serif; font-weight:800; font-size:clamp(2rem,3.5vw,3.2rem); line-height:1.02; letter-spacing:-0.02em; max-width:14ch; }
-.auth-aside h1 em{ font-family:var(--brandfont,"Fraunces"); font-style:italic; font-weight:400; color:var(--tc-gold); }
-.auth-aside p{ position:relative; z-index:1; color:oklch(0.74 0.012 85); max-width:42ch; }
+/* ---------------- LOGIN (Taylormade Social brand) ---------------- */
+.auth{ position:relative; overflow:hidden;  /* glows bleed full-bleed, no panel seam */
+  min-height:100svh; display:grid; grid-template-columns:1.05fr 0.95fr;
+  font-family:var(--tm-body); background:var(--tm-ink); color:#fff; }
+
+/* Left: the hero's atmosphere — ink ground, blurred colour orbs. */
+.auth-aside{ position:relative;
+  display:flex; flex-direction:column; justify-content:space-between; gap:2rem;
+  padding:clamp(2rem,4vw,3.4rem); }
+.auth-aside .glow{ position:absolute; border-radius:50%; filter:blur(78px); z-index:0; pointer-events:none; }
+.auth-aside .glow-blue{ width:38vw; max-width:480px; aspect-ratio:1; background:var(--tm-blue); opacity:.34; top:-20%; right:-10%; }
+.auth-aside .glow-pink{ width:30vw; max-width:380px; aspect-ratio:1; background:var(--tm-pink); opacity:.22; bottom:-18%; left:-14%; }
+.auth-aside > *{ position:relative; z-index:1; }
+.auth-aside > div{ margin-block:auto; }  /* centre the headline between mark and footer */
+
+.auth-brand{ display:inline-flex; align-items:center; gap:.6rem; text-decoration:none; width:max-content; }
+.auth-brand .mark{ display:flex; gap:4px; }
+.auth-brand .mark i{ width:10px; height:10px; border-radius:50%; }
+.auth-brand .mark i:nth-child(1){ background:var(--tm-blue); }
+.auth-brand .mark i:nth-child(2){ background:var(--tm-pink); }
+.auth-brand .mark i:nth-child(3){ background:var(--tm-yellow); }
+.auth-brand .brand-tx{ font-family:var(--tm-display); font-weight:800; font-size:1.05rem;
+  line-height:1; letter-spacing:-.02em; display:flex; flex-direction:column; gap:2px; }
+.auth-brand .brand-tx small{ font-family:var(--tm-body); font-weight:500; font-size:.62rem;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--tm-dimmer); }
+
+.eyebrow{ display:inline-flex; align-items:center; gap:.5rem; margin-bottom:1.1rem;
+  font-weight:600; font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; color:var(--tm-dim); }
+.eyebrow::before{ content:""; width:26px; height:2px; background:var(--tm-yellow); }
+
+/* Same three-beat headline as the marketing hero: sans, highlight, italic serif. */
+.auth-aside h1{ font-family:var(--tm-display); font-weight:800;
+  font-size:clamp(2.1rem,4.4vw,3.6rem); line-height:1.0; letter-spacing:-.025em; }
+.auth-aside h1 .hl{ position:relative; color:var(--tm-yellow); }
+.auth-aside h1 .hl::after{ content:""; position:absolute; left:0; right:-.04em; bottom:.02em;
+  height:.085em; background:var(--tm-yellow-deep); opacity:.85; }
+.auth-aside h1 em{ display:block; font-family:var(--tm-serif); font-style:italic;
+  font-weight:500; font-size:.62em; letter-spacing:0; margin-top:.1em; color:#fff; }
+.auth-aside .lead{ margin-top:1.3rem; max-width:44ch; color:var(--tm-dim); line-height:1.55; }
+.auth-foot{ font-size:.78rem; color:var(--tm-dimmer); letter-spacing:.02em; }
+
+/* Right: the card. */
 .auth-main{ display:flex; align-items:center; justify-content:center; padding:2rem; }
-.auth-card{ width:100%; max-width:380px; }
-.auth-card h2{ font-family:"Bricolage Grotesque",sans-serif; font-weight:700; font-size:1.7rem; margin-bottom:0.4rem; }
-.auth-card .sub{ color:oklch(0.74 0.012 85); margin-bottom:1.8rem; font-size:0.95rem; }
+.auth-card{ width:100%; max-width:390px; background:rgba(255,255,255,.045);
+  border:1px solid var(--tm-line); border-radius:24px; padding:clamp(1.6rem,3vw,2.2rem); }
+.auth-card h2{ font-family:var(--tm-display); font-weight:800; font-size:1.65rem;
+  letter-spacing:-.02em; margin-bottom:.4rem; }
+.auth-card .sub{ color:var(--tm-dim); margin-bottom:1.7rem; font-size:.94rem; line-height:1.5; }
+
 .field{ margin-bottom:1rem; }
-.field label{ display:block; font-size:0.8rem; font-weight:600; margin-bottom:0.4rem; color:oklch(0.74 0.012 85); }
-.field input{ width:100%; padding:0.85rem 1rem; border-radius:11px; border:1px solid var(--tc-line);
-  background:var(--tc-ink2); color:var(--tc-paper); transition:border-color .2s var(--ease); }
-.field input:focus{ border-color:var(--tc-gold); outline:none; }
-.btn-primary{ width:100%; padding:0.9rem; border-radius:999px; background:var(--tc-gold); color:var(--tc-ink);
-  font-weight:700; transition:transform .2s var(--ease), background-color .2s var(--ease); }
-.btn-primary:hover{ background:var(--tc-paper); }
-.btn-primary:active{ transform:scale(0.98); }
-.btn-primary[disabled]{ opacity:0.6; cursor:wait; }
-.btn-google{ width:100%; padding:0.85rem; border-radius:999px; background:#fff; color:#1f1f1f;
-  border:1px solid var(--tc-line); font-family:inherit; font-size:0.95rem; font-weight:600; cursor:pointer;
-  display:flex; align-items:center; justify-content:center; gap:0.65rem;
-  transition:transform .2s var(--ease), box-shadow .2s var(--ease); }
+.field label{ display:block; font-size:.78rem; font-weight:600; margin-bottom:.4rem; color:var(--tm-dim); }
+.field input{ width:100%; padding:.85rem 1rem; border-radius:12px; border:1px solid var(--tm-line);
+  background:rgba(0,0,0,.28); color:#fff; transition:border-color .2s var(--ease); }
+.field input:focus{ border-color:var(--tm-yellow); outline:none; }
+
+/* Pill buttons, matching site.css .btn geometry. */
+.btn-google{ width:100%; padding:.9rem 1.4rem; border-radius:999px; border:2px solid transparent;
+  background:#fff; color:#1f1f1f; font-family:var(--tm-body); font-weight:600; font-size:1rem;
+  display:flex; align-items:center; justify-content:center; gap:.6rem; cursor:pointer;
+  box-shadow:0 14px 30px -16px rgba(0,0,0,.55);
+  transition:transform .16s var(--ease), box-shadow .2s var(--ease); }
 .btn-google svg{ width:18px; height:18px; flex:none; }
-.btn-google:hover{ box-shadow:0 2px 12px rgb(0 0 0 / 0.28); }
-.btn-google:active{ transform:scale(0.98); }
-.btn-google[disabled]{ opacity:0.6; cursor:wait; }
-.staff{ margin-top:2.2rem; padding-top:1.2rem; border-top:1px solid var(--tc-line); }
-.staff-toggle{ background:none; border:0; padding:0; font-family:inherit; cursor:pointer;
-  font-size:0.78rem; letter-spacing:0.04em; color:oklch(0.52 0.012 85);
-  transition:color .2s var(--ease); }
-.staff-toggle::after{ content:" →"; }
-.staff-toggle:hover{ color:oklch(0.74 0.012 85); }
-.staff-toggle[aria-expanded="true"]::after{ content:" ↑"; }
+.btn-google:hover{ transform:translateY(-2px); box-shadow:0 18px 34px -16px rgba(0,0,0,.7); }
+.btn-google:active{ transform:scale(.97); }
+.btn-google[disabled]{ opacity:.6; cursor:wait; transform:none; }
+
+.btn-primary{ width:100%; padding:.85rem 1.4rem; border-radius:999px; border:2px solid transparent;
+  background:var(--tm-yellow); color:var(--tm-ink); font-family:var(--tm-body); font-weight:600;
+  box-shadow:0 10px 24px -12px rgba(239,188,28,.8);
+  transition:transform .16s var(--ease), background .2s var(--ease); }
+.btn-primary:hover{ background:var(--tm-yellow-deep); transform:translateY(-2px); }
+.btn-primary:active{ transform:scale(.97); }
+.btn-primary[disabled]{ opacity:.6; cursor:wait; transform:none; }
+
+.auth-err{ color:#FF8FA3; font-size:.85rem; margin-top:.9rem; min-height:1.2em; line-height:1.45; }
+.auth-help{ margin-top:1.3rem; font-size:.82rem; color:var(--tm-dimmer); }
+
+.staff{ margin-top:1.9rem; padding-top:1.1rem; border-top:1px solid var(--tm-line); }
+.staff-toggle{ display:inline-flex; align-items:center; gap:.4rem; background:none; border:0; padding:0;
+  font-family:var(--tm-body); font-size:.78rem; letter-spacing:.04em; color:var(--tm-dimmer);
+  cursor:pointer; transition:color .2s var(--ease); }
+.staff-toggle .arr{ transition:transform .2s var(--ease); }
+.staff-toggle:hover{ color:#fff; }
+.staff-toggle:hover .arr{ transform:translateX(3px); }
+.staff-toggle[aria-expanded="true"] .arr{ transform:rotate(-90deg); }
 .staff #loginForm{ margin-top:1.2rem; }
-.auth-err{ color:oklch(0.65 0.16 25); font-size:0.85rem; margin-top:0.9rem; min-height:1.2em; }
-.auth-help{ margin-top:1.4rem; font-size:0.82rem; color:oklch(0.58 0.012 85); }
+
+.auth :focus-visible{ outline:2px solid var(--tm-yellow); outline-offset:3px; border-radius:6px; }
+
+@media (prefers-reduced-motion:reduce){
+  .btn-google,.btn-primary,.staff-toggle,.staff-toggle .arr{ transition:none; }
+  .btn-google:hover,.btn-primary:hover{ transform:none; }
+}
 
 /* ---------------- APP SHELL (dashboard, themed) ---------------- */
 .app{ display:grid; grid-template-columns:248px 1fr; min-height:100svh;
@@ -175,7 +237,13 @@ a{ color:inherit; }
 
 @media (max-width:900px){
   .auth{ grid-template-columns:1fr; }
-  .auth-aside{ display:none; }
+  .auth-aside{ min-height:auto; padding:1.7rem 1.3rem 1.2rem; gap:1.3rem; }
+  .auth-aside > div{ margin-block:0; }
+  .auth-aside h1{ font-size:clamp(1.95rem,8.4vw,2.7rem); }
+  .auth-aside .lead{ display:none; }   /* the card's subline already says what to do */
+  .auth-aside .glow-blue{ opacity:.30; }
+  .auth-foot{ display:none; }
+  .auth-main{ padding:.4rem 1.3rem 2.6rem; }
   .app{ grid-template-columns:1fr; }
   .side{ position:fixed; inset:0 30% 0 0; z-index:40; transform:translateX(-100%); transition:transform .3s var(--ease); }
   .side.open{ transform:none; }
