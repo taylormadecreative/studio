@@ -34,7 +34,7 @@
   <main class="auth-main">
     <div class="auth-card">
       <h2>Client login</h2>
-      <p class="sub">Use the Google account you check your email with.</p>
+      <p class="sub">Sign in with Google, or have a link emailed to you.</p>
 
       <button class="btn-google" type="button" id="googleBtn">
         <svg viewBox="0 0 18 18" aria-hidden="true" focusable="false">
@@ -46,24 +46,20 @@
         <span>Continue with Google</span>
       </button>
 
+      <div class="auth-or"><span>or</span></div>
+
+      <form id="linkForm">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" autocomplete="email" required placeholder="you@yourbrand.com" />
+        </div>
+        <button class="btn-primary" type="submit" id="linkBtn">Email me a sign-in link</button>
+      </form>
+
+      <p class="auth-ok hidden" id="authOk"></p>
       <div class="auth-err" id="authErr"></div>
 
       <p class="auth-help">Trouble signing in? Text Nelson at (817) 707-1291.</p>
-
-      <div class="staff">
-        <button type="button" class="staff-toggle" id="staffToggle" aria-expanded="false" aria-controls="loginForm">Staff login <span class="arr" aria-hidden="true">→</span></button>
-        <form id="loginForm" class="hidden">
-          <div class="field">
-            <label for="email">Email</label>
-            <input type="email" id="email" autocomplete="email" required />
-          </div>
-          <div class="field">
-            <label for="password">Password</label>
-            <input type="password" id="password" autocomplete="current-password" required />
-          </div>
-          <button class="btn-primary" type="submit" id="loginBtn">Sign in</button>
-        </form>
-      </div>
     </div>
   </main>
 </section>

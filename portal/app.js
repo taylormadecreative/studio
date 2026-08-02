@@ -38,28 +38,12 @@ function showAuth() { $("#authView").classList.remove("hidden"); $("#appView").c
 function showApp() { $("#authView").classList.add("hidden"); $("#appView").classList.remove("hidden"); }
 
 /* ---------------- login ---------------- */
-$("#loginForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const btn = $("#loginBtn"); const err = $("#authErr");
-  err.textContent = ""; btn.disabled = true; btn.textContent = "Signing in…";
-  const { data, error } = await sb.auth.signInWithPassword({
-    email: $("#email").value.trim(), password: $("#password").value,
-  });
-  btn.disabled = false; btn.textContent = "Sign in";
-  if (error) { err.textContent = error.message || "Could not sign in."; return; }
-  state.user = data.user; await loadApp();
-});
-
-$("#staffToggle").addEventListener("click", () => {
-  const form = $("#loginForm"); const t = $("#staffToggle");
-  const open = form.classList.toggle("hidden") === false;
-  t.setAttribute("aria-expanded", String(open));
-  if (open) $("#email").focus();
-});
+/* Two doors, no passwords: Google, or a one-time link over email.
+   Both land back on this page and are picked up by getSession() in init(). */
 
 $("#googleBtn").addEventListener("click", async () => {
   const btn = $("#googleBtn"); const err = $("#authErr");
-  err.textContent = ""; btn.disabled = true; btn.querySelector("span").textContent = "Redirecting…";
+  err.textContent = ""; btn.disabled = true; btn.querySelector("span").textContent = "Redirecting\u2026";
   const { error } = await sb.auth.signInWithOAuth({
     provider: "google",
     options: { redirectTo: location.origin + location.pathname },
@@ -68,6 +52,30 @@ $("#googleBtn").addEventListener("click", async () => {
     btn.disabled = false; btn.querySelector("span").textContent = "Continue with Google";
     err.textContent = error.message || "Could not start Google sign-in.";
   }
+});
+
+$("#linkForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const btn = $("#linkBtn"), err = $("#authErr"), ok = $("#authOk");
+  const email = $("#email").value.trim();
+  err.textContent = ""; ok.classList.add("hidden");
+  btn.disabled = true; btn.textContent = "Sending\u2026";
+
+  const { error } = await sb.auth.signInWithOtp({
+    email,
+    options: { emailRedirectTo: location.origin + location.pathname },
+  });
+
+  btn.disabled = false; btn.textContent = "Email me a sign-in link";
+  if (error) {
+    err.textContent = /rate|limit/i.test(error.message || "")
+      ? "That's a few too many requests in a row. Give it a minute, then try again."
+      : (error.message || "Could not send the link.");
+    return;
+  }
+  $("#linkForm").classList.add("hidden");
+  ok.classList.remove("hidden");
+  ok.innerHTML = `Check <strong>${esc(email)}</strong> for a sign-in link. It's good for one hour \u2014 open it on this device.`;
 });
 
 $("#logoutBtn").addEventListener("click", async () => { await sb.auth.signOut(); location.reload(); });
